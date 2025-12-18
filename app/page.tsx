@@ -35,11 +35,12 @@ const testimonials = [
   }
 ];
 
+// Use pure images for hero backgrounds (no dark overlay), so white images stay pure
 const heroBackgrounds = [
-  "radial-gradient(circle at top, rgba(15,23,42,0.3), rgba(15,23,42,0.9)), url('https://images.pexels.com/photos/1853507/pexels-photo-1853507.jpeg?auto=compress&cs=tinysrgb&w=1600')",
-  "radial-gradient(circle at top, rgba(15,23,42,0.3), rgba(15,23,42,0.9)), url('https://images.pexels.com/photos/1081685/pexels-photo-1081685.jpeg?auto=compress&cs=tinysrgb&w=1600')",
-  "radial-gradient(circle at top, rgba(15,23,42,0.3), rgba(15,23,42,0.9)), url('https://images.pexels.com/photos/247204/pexels-photo-247204.jpeg?auto=compress&cs=tinysrgb&w=1600')",
-  "radial-gradient(circle at top, rgba(15,23,42,0.3), rgba(15,23,42,0.9)), url('https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=1600')"
+  "url('/images/hero-1.png')",
+  "url('/images/hero-2.png')",
+  "url('/images/hero-3.png')",
+  "url('/images/hero-4.png')"
 ];
 
 export default function Home() {

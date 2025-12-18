@@ -105,22 +105,28 @@ export default function Home() {
 
           <div className={styles.heroOverlay}>
             <motion.div
-              className={styles.heroBadge}
+              className={styles.heroTitleBlock}
               initial="hidden"
               animate="visible"
               variants={fadeIn}
               transition={{ duration: 0.8 }}
             >
-              HELLO
+              <p className={styles.heroTitleLine}>
+                REIMAGINING INTELLIGENCE
+              </p>
+              <p className={styles.heroTitleLine}>THROUGH RESEARCH, DESIGN &amp;</p>
+              <p className={styles.heroTitleLine}>TECHNOLOGY</p>
             </motion.div>
-            <div className={styles.heroTextBlock}>
-              <p className={styles.heroLabel}>
-                Visual Creative Studio — Based in NYC
-              </p>
-              <h1 className={styles.heroTitle}>PureVisuals</h1>
-              <p className={styles.heroSubtitle}>
-                Blending creativity &amp; strategy for seamless interfaces.
-              </p>
+
+            <div className={styles.heroCornerRow}>
+              <div className={styles.heroCornerLabel}>
+                <span>AI ACCELERATED STUDIO</span>
+                <span>BASED IN SF BAY AREA</span>
+              </div>
+              <div className={styles.heroCornerLabel}>
+                <span>BLENDING CREATIVITY &amp; STRATEGY</span>
+                <span>FOR SEAMLESS EXPERIENCES</span>
+              </div>
             </div>
           </div>
         </div>

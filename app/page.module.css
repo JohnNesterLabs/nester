@@ -6,7 +6,7 @@
   background: radial-gradient(circle at top, #18181b 0, #020617 55%, #000 100%);
   font-family: "JetBrains Mono", "IBM Plex Mono", ui-monospace, Menlo, Monaco,
     Consolas, "Liberation Mono", "Courier New", monospace;
-  padding: 0 40px 64px;
+  padding: 0 40px 30px;
 }
 
 .pageInner {
@@ -489,14 +489,18 @@
 }
 
 .whoName {
-  font-size: 14px;
-  letter-spacing: 0.12em;
+  font-size: 24px;
+  font-family: "JetBrains Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin-bottom: 0px;
 }
 
 .whoRole {
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  color: #a1a1aa;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  color: #71717a;
+  margin: 0px;
 }
 
 .testimonialSection {
@@ -534,28 +538,35 @@
 }
 
 .testimonialQuote {
-  font-size: clamp(16px, 1.5vw, 20px);
-  line-height: 1.7;
+  font-size: 18px;
+  line-height: 1.8em;
   color: #e5e7eb;
+  font-family: "Poppins", "Poppins Placeholder", sans-serif;
+  font-weight: 400;
   margin-bottom: 32px;
+  letter-spacing: 0em;
 }
 
 .testimonialName {
-  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 13px;
+  font-family: "JetBrains Mono", ui-monospace, Menlo, Monaco, Consolas,
+  "Liberation Mono", "Courier New", monospace;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.8em;
+  color: #e5e7eb;
+  letter-spacing: 0em;
+  margin-bottom: 10px;
 }
 
 .testimonialRole {
-  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 11px;
-  color: #a1a1aa;
-  margin-top: 4px;
+  font-family: "JetBrains Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono",
+  "Liberation Mono", "Courier New", monospace;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4em;
+  color: #71717a;
+  letter-spacing: 0.05em;
+  margin-top: 0px;
 }
 
 .testimonialNav {
@@ -615,6 +626,7 @@
 }
 
 .finalLinkButton {
+  font-family: "Poppins", "Poppins Placeholder", sans-serif;
   background: none;
   border: none;
   color: #e5e7eb;
@@ -676,12 +688,13 @@
 .footerCopyright {
   display: flex;
   align-items: flex-end;
-  justify-content: flex-start;
+  justify-content: end;
   font-family: "JetBrains Mono", "IBM Plex Mono", ui-monospace, Menlo, Monaco,
     Consolas, "Liberation Mono", "Courier New", monospace;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 11px;
+  letter-spacing: 0.05em;
+  font-size: 14px;
+  font-weight: 400;
   color: #71717a;
 }
 

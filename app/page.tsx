@@ -318,7 +318,6 @@ export default function Home() {
         <div className={styles.testimonialTitleRow}>
           <h2>What They Said</h2>
         </div>
-        <div className={styles.testimonialDot} />
 
         <div className={styles.testimonialBody}>
           <p className={styles.testimonialQuote}>

@@ -795,11 +795,11 @@
 }
 
 .footerLabel {
-  font-size: 12px;
+  font-size: 14px;
   text-transform: uppercase;
-  letter-spacing: 0.22em;
-  color: #a1a1aa;
-  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+  color: #71717a;
+  margin-bottom: 10px;
 }
 
 .footerLinks {
@@ -809,14 +809,20 @@
 }
 
 .footerLinks a {
-  color: #ffffff;
+  color: #e4e4e7;
   text-decoration: none;
   font-family: "Poppins", "Poppins Placeholder", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .footerText {
-  color: #ffffff;
+  color: #e4e4e7;
   font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  margin-top: 0px;
+  margin-bottom: 4px;
 }
 
 .footerBottom {

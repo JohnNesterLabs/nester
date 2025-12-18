@@ -371,13 +371,9 @@ export default function Home() {
             </div>
             <div>
               <p className={styles.footerLabel}>Location</p>
-              <p className={styles.footerText}>
-                701 Lakeway Dr #200,
-                <br />
-                Sunnyvale CA - 94085,
-                <br />
-                United States
-              </p>
+              <p className={styles.footerText}>701 Lakeway Dr #200,</p>
+              <p className={styles.footerText}>Sunnyvale CA - 94085,</p>
+              <p className={styles.footerText}>United States</p>
             </div>
             <div>
               <p className={styles.footerLabel}>Contact</p>

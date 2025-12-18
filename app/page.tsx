@@ -74,13 +74,13 @@ export default function Home() {
     <main className={styles.main}>
       {/* Navbar */}
       <header className={styles.header}>
-        <div className={styles.logo}>PureVisuals</div>
+        <div className={styles.logo}>NESTER</div>
         <nav className={styles.nav}>
-          <a href="#works">Works</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+          <a href="#works">Work</a>
+          <a href="#about">About Us</a>
+          <a href="/blog">Blogs</a>
         </nav>
-        <button className={styles.navCta}>Get Template</button>
+        <button className={styles.navCta}>Let&apos;s talk</button>
         <button className={styles.menuToggle} aria-label="Toggle navigation">
           <span />
           <span />

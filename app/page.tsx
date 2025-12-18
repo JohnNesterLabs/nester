@@ -79,6 +79,9 @@ export default function Home() {
         <nav className={styles.nav}>
           <Link href="/features">Features</Link>
           <a href="#about">About</a>
+          <a href="https://nesteraibot.web.app/" target="_blank" rel="noreferrer">
+            NesterAI
+          </a>
           <a href="#contact">Contact</a>
         </nav>
         <button className={styles.navCta}>Get Template</button>

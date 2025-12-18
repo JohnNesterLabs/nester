@@ -769,6 +769,24 @@
   .footerTop {
     grid-template-columns: 1fr;
   }
+
+  .workDetailSection {
+    margin: 96px 16px 48px;
+    max-width: 100%;
+  }
+
+  .workDetailBody {
+    max-width: 100%;
+  }
+
+  .moreWorkCarousel {
+    gap: 16px;
+  }
+
+  .moreWorkCard {
+    min-width: 220px;
+    max-width: 240px;
+  }
 }
 
 

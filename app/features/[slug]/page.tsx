@@ -31,6 +31,9 @@ export default function FeatureDetailPage({ params }: FeatureDetailPageProps) {
         <nav className={styles.nav}>
           <a href="/#works">Features</a>
           <a href="/#about">About</a>
+          <a href="https://nesteraibot.web.app/" target="_blank" rel="noreferrer">
+            NesterAI
+          </a>
           <a href="/#contact">Contact</a>
         </nav>
         <button className={styles.navCta}>Get Template</button>

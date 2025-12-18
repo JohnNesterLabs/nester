@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-mot
 import { useEffect, useRef, useState } from "react";
 import styles from "./page.module.css";
 import SiteHeader from "./components/SiteHeader";
+import FeaturedWorksSection from "./components/FeaturedWorks";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -150,27 +151,7 @@ export default function Home() {
       </section>
 
       {/* Featured Works */}
-      <motion.section
-        id="works"
-        className={styles.section}
-        ref={worksRef}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={sectionVariants}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-      >
-        <div className={styles.sectionHeaderCentered}>
-          <h2>Featured Works</h2>
-        </div>
-        <div className={styles.worksGrid}>
-          <WorkCard title="Liquid Fusion" tag="Food & Beverage" />
-          <WorkCard title="Hyper Drive" tag="Product" />
-          <WorkCard title="Eclipse Studio" tag="Product" />
-          <WorkCard title="Archive_199X" tag="Visual Direction" />
-        </div>
-        <button className={styles.secondaryButton}>More Works</button>
-      </motion.section>
+      <FeaturedWorksSection />
 
       {/* Services */}
       <motion.section

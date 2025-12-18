@@ -1,7 +1,6 @@
-import type { Metadata } from "next";
 import "./globals.css";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "PureVisuals Studio",
   description: "Visual creative studio – photography, videography, and visual direction."
 };

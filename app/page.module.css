@@ -452,55 +452,131 @@
   color: #a1a1aa;
 }
 
-.ctaSection {
-  padding: 72px 0 56px;
-  border-top: 1px solid rgba(39, 39, 42, 0.9);
-  outline: 1px dashed rgba(250, 250, 250, 0.2); /* debug: visualize section bounds */
+.testimonialSection {
+  padding: 80px 0 72px;
 }
 
-.ctaInner {
+.testimonialTitleRow {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.testimonialTitleRow h2 {
+  font-size: clamp(32px, 3.2vw, 52px);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.testimonialDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background-color: #f5f5f5;
+  margin: 0 auto 40px;
+}
+
+.testimonialBody {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.testimonialQuote {
+  font-size: clamp(16px, 1.5vw, 20px);
+  line-height: 1.7;
+  color: #e5e7eb;
+  margin-bottom: 32px;
+}
+
+.testimonialName {
+  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 13px;
+}
+
+.testimonialRole {
+  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 11px;
+  color: #a1a1aa;
+  margin-top: 4px;
+}
+
+.testimonialNav {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.testimonialNav button {
+  width: 36px;
+  height: 36px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: transparent;
+  color: #e5e7eb;
+  font-size: 18px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-}
-
-.ctaHeading {
-  font-size: clamp(28px, 3vw, 40px);
-  line-height: 1.05;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-}
-
-.ctaText {
-  margin-top: 12px;
-  font-size: 14px;
-  color: #a1a1aa;
-  max-width: 340px;
-}
-
-.primaryButton {
-  padding: 14px 30px;
-  border-radius: 999px;
-  border: none;
-  background: radial-gradient(circle at top left, #f97316, #ea580c);
-  color: #f9fafb;
-  font-size: 14px;
-  font-weight: 500;
+  justify-content: center;
   cursor: pointer;
-  box-shadow: 0 24px 55px rgba(248, 113, 22, 0.35);
+}
+
+.finalSection {
+  padding: 96px 0 64px;
+  background-color: #000;
+}
+
+.finalCtaRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 96px;
+}
+
+.finalDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background-color: #f5f5f5;
+}
+
+.finalCtaText {
+  text-align: center;
+}
+
+.finalHeading {
+  font-size: clamp(32px, 4vw, 64px);
+  line-height: 1.12;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+}
+
+.finalLinkButton {
+  margin-top: 16px;
+  background: none;
+  border: none;
+  color: #e5e7eb;
+  font-size: 14px;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .footer {
   padding-top: 40px;
-  border-top: 1px solid rgba(39, 39, 42, 0.9);
   font-size: 13px;
-  outline: 1px dashed rgba(250, 250, 250, 0.2); /* debug: visualize footer bounds */
 }
 
 .footerTop {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr)); /* 3 columns + copyright column */
   gap: 32px;
   margin-bottom: 28px;
 }
@@ -530,10 +606,27 @@
 
 .footerBottom {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   color: #71717a;
   padding-top: 10px;
+  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 11px;
+}
+
+.footerCopyright {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 11px;
+  color: #71717a;
 }
 
 @media (min-width: 1600px) {
@@ -641,6 +734,10 @@
 
   .worksGrid {
     grid-template-columns: 1fr;
+  }
+
+  .whoGrid {
+    grid-template-columns: 1fr; /* one team member card per row on mobile */
   }
 
   .footerTop {

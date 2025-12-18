@@ -60,6 +60,7 @@ export default function Home() {
   // Random background cycling for left / right hero images
   const [leftIndex, setLeftIndex] = useState(0);
   const [rightIndex, setRightIndex] = useState(1);
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -282,65 +283,115 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* CTA */}
+      {/* What They Said – testimonial carousel */}
       <motion.section
-        id="contact"
-        className={styles.ctaSection}
+        className={styles.testimonialSection}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={sectionVariants}
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
-        <div className={styles.ctaInner}>
-          <div>
-            <h2 className={styles.ctaHeading}>
-              Turning imagination
-              <br />
-              into reality.
-            </h2>
-            <p className={styles.ctaText}>
-              Ready to bring your next visual story to life? Let&apos;s talk.
-            </p>
+        <div className={styles.testimonialTitleRow}>
+          <h2>What They Said</h2>
+        </div>
+        <div className={styles.testimonialDot} />
+
+        <div className={styles.testimonialBody}>
+          <p className={styles.testimonialQuote}>
+            &quot;{testimonials[testimonialIndex].quote}&quot;
+          </p>
+          <p className={styles.testimonialName}>
+            {testimonials[testimonialIndex].name}
+          </p>
+          <p className={styles.testimonialRole}>
+            {testimonials[testimonialIndex].role}
+          </p>
+
+          <div className={styles.testimonialNav}>
+            <button
+              type="button"
+              aria-label="Previous testimonial"
+              onClick={() =>
+                setTestimonialIndex(
+                  (testimonialIndex - 1 + testimonials.length) %
+                    testimonials.length
+                )
+              }
+            >
+              ‹
+            </button>
+            <button
+              type="button"
+              aria-label="Next testimonial"
+              onClick={() =>
+                setTestimonialIndex(
+                  (testimonialIndex + 1) % testimonials.length
+                )
+              }
+            >
+              ›
+            </button>
           </div>
-          <button className={styles.primaryButton}>Let&apos;s Talk</button>
         </div>
       </motion.section>
 
-      {/* Footer */}
-      <footer className={styles.footer}>
-        <div className={styles.footerTop}>
-          <div>
-            <p className={styles.footerLabel}>About</p>
-            <div className={styles.footerLinks}>
-              <a href="#works">Works</a>
-              <a href="#about">About</a>
-              <a href="#contact">Contact</a>
-            </div>
-          </div>
-          <div>
-            <p className={styles.footerLabel}>Location</p>
-            <p className={styles.footerText}>
-              245 Park Ave
+      {/* Final CTA + Footer */}
+      <motion.section
+        id="contact"
+        className={styles.finalSection}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={sectionVariants}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
+        <div className={styles.finalCtaRow}>
+          <span className={styles.finalDot} />
+          <div className={styles.finalCtaText}>
+            <h2 className={styles.finalHeading}>
+              Turning imagination
               <br />
-              New York, NY 10110
-              <br />
-              United States
-            </p>
-          </div>
-          <div>
-            <p className={styles.footerLabel}>Socials</p>
-            <div className={styles.footerLinks}>
-              <a href="#">Instagram</a>
-              <a href="#">Twitter</a>
-              <a href="#">Behance</a>
-            </div>
+              into reality
+            </h2>
+            <button className={styles.finalLinkButton}>Let&apos;s Talk</button>
           </div>
         </div>
-        <div className={styles.footerBottom}>
-          <span>2025 © PureVisuals</span>
-        </div>
-      </footer>
+
+        <footer className={styles.footer}>
+          <div className={styles.footerTop}>
+            <div>
+              <p className={styles.footerLabel}>About</p>
+              <div className={styles.footerLinks}>
+                <a href="#works">Works</a>
+                <a href="#about">About</a>
+                <a href="#contact">Let&apos;s Talk</a>
+              </div>
+            </div>
+            <div>
+              <p className={styles.footerLabel}>Location</p>
+              <p className={styles.footerText}>
+                245 Park Ave
+                <br />
+                New York, NY 10110
+                <br />
+                United States
+              </p>
+            </div>
+            <div>
+              <p className={styles.footerLabel}>Contact</p>
+              <div className={styles.footerLinks}>
+                <a href="mailto:contact@nesterlabs.com">contact@nesterlabs.com</a>
+                <a href="tel:+14086731340">+1 (408) 673-1340</a>
+                <a href="#">LinkedIn</a>
+              </div>
+            </div>
+            <div className={styles.footerCopyright}>
+              <span>2025 © Nesterlabs</span>
+            </div>
+          </div>
+        </footer>
+      </motion.section>
     </main>
   );
 }

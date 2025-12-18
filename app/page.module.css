@@ -367,6 +367,7 @@
 
 .servicesSection {
   padding: 80px 60px 64px;
+  position: relative; /* so sticky children reference this section */
 }
 
 .servicesTitleRow {
@@ -375,6 +376,11 @@
   justify-content: center;
   gap: 16px;
   margin-bottom: 40px;
+  position: sticky;
+  top: 80px;           /* stays visible while cards stack below */
+  z-index: 3;
+  background-color: #000; /* match page background so text sits on solid black */
+  padding-bottom: 16px;
 }
 
 .servicesTitleRow h2 {

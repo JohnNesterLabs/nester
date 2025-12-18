@@ -473,12 +473,16 @@
   }
 
   .heroSection {
-    height: auto;
+    height: 400vh; /* keep tall scroll area so sticky hero + animations work */
   }
 
   .hero {
-    position: relative;
-    height: calc(100vh); /* both images fit in viewport below header */
+    position: sticky;       /* make hero sticky on mobile as well */
+    top: 56px;              /* stick just below fixed mobile header */
+    margin-inline: 0;
+    margin-top: 0;
+    margin-bottom: 32px;
+    height: 100vh;
     min-height: 0;
     overflow: hidden;
   }
@@ -492,12 +496,12 @@
 
   .heroImage {
     width: 100%;
-    flex: 1 1 50%; /* each image takes half of hero height */
+    flex: 1 1 50%;          /* each image takes half of hero height */
     height: auto;
   }
 
   .heroOverlay {
-    display: flex; /* show hero text on mobile as it slides up */
+    display: flex;          /* show hero text on mobile as it slides up */
   }
 
   .mediaRow {

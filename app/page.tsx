@@ -167,10 +167,10 @@ export default function Home() {
         </div>
         <div className={styles.servicesDivider} />
 
-        <div className={styles.serviceRows}>
-          <div className={styles.serviceRow}>
-            <div className={styles.serviceRowLabel}>Human</div>
-            <div className={styles.serviceRowColumns}>
+        <div className={styles.serviceStack}>
+          <div className={styles.serviceCard}>
+            <div className={styles.serviceCardLabel}>Human</div>
+            <div className={styles.serviceCardColumns}>
               <ul>
                 <li>Research</li>
                 <li>Product Design</li>
@@ -184,9 +184,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={styles.serviceRow}>
-            <div className={styles.serviceRowLabel}>Intelligence</div>
-            <div className={styles.serviceRowColumns}>
+          <div className={styles.serviceCard}>
+            <div className={styles.serviceCardLabel}>Intelligence</div>
+            <div className={styles.serviceCardColumns}>
               <ul>
                 <li>Agentic AI &amp; MCP</li>
                 <li>Natural Language Engines</li>
@@ -200,9 +200,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={styles.serviceRow}>
-            <div className={styles.serviceRowLabel}>Memory</div>
-            <div className={styles.serviceRowColumns}>
+          <div className={styles.serviceCard}>
+            <div className={styles.serviceCardLabel}>Memory</div>
+            <div className={styles.serviceCardColumns}>
               <ul>
                 <li>Knowledge Graph &amp; Retrieval</li>
                 <li>Analysis Pipelines</li>
@@ -214,9 +214,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={styles.serviceRow}>
-            <div className={styles.serviceRowLabel}>Cloud</div>
-            <div className={styles.serviceRowColumns}>
+          <div className={styles.serviceCard}>
+            <div className={styles.serviceCardLabel}>Cloud</div>
+            <div className={styles.serviceCardColumns}>
               <ul>
                 <li>Cloud &amp; AI Platforms</li>
                 <li>Infra Security &amp; Compliance</li>

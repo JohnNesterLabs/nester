@@ -49,11 +49,13 @@ export default function Home() {
     offset: ["start start", "end start"]
   });
 
-  // Scroll-based motion for hero images and fade-out
+  // Scroll-based motion for hero images and hero text
   // Images slide well past the viewport while the hero stays sticky
   const leftX = useTransform(scrollYProgress, [0, 1], ["0%", "-150%"]);
   const rightX = useTransform(scrollYProgress, [0, 1], ["0%", "150%"]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.9, 1], [1, 1, 0]);
+  const textY = useTransform(scrollYProgress, [0, 0.4, 1], ["150%", "0%", "-8%"]);
+  const textOpacity = useTransform(scrollYProgress, [0, 0.15, 0.6], [0, 1, 1]);
 
   // Random background cycling for left / right hero images
   const [leftIndex, setLeftIndex] = useState(0);
@@ -78,6 +80,10 @@ export default function Home() {
           <a href="#contact">Contact</a>
         </nav>
         <button className={styles.navCta}>Get Template</button>
+        <button className={styles.menuToggle} aria-label="Toggle navigation">
+          <span />
+          <span />
+        </button>
       </header>
 
       {/* Hero – scroll-controlled split images pinned while next section comes up */}
@@ -106,28 +112,27 @@ export default function Home() {
           <div className={styles.heroOverlay}>
             <motion.div
               className={styles.heroTitleBlock}
-              initial="hidden"
-              animate="visible"
-              variants={fadeIn}
-              transition={{ duration: 0.8 }}
+              style={{ y: textY, opacity: textOpacity }}
             >
               <p className={styles.heroTitleLine}>
                 REIMAGINING INTELLIGENCE
               </p>
               <p className={styles.heroTitleLine}>THROUGH RESEARCH, DESIGN &amp;</p>
               <p className={styles.heroTitleLine}>TECHNOLOGY</p>
+
+              <div className={styles.heroCornerRow}>
+                <div className={styles.heroCornerLabel}>
+                  <span>AI ACCELERATED STUDIO</span>
+                  <span>BASED IN SF BAY AREA</span>
+                </div>
+                <div className={styles.heroCornerLabel}>
+                  <span>BLENDING CREATIVITY &amp; STRATEGY</span>
+                  <span>FOR SEAMLESS EXPERIENCES</span>
+                </div>
+              </div>
             </motion.div>
 
-            <div className={styles.heroCornerRow}>
-              <div className={styles.heroCornerLabel}>
-                <span>AI ACCELERATED STUDIO</span>
-                <span>BASED IN SF BAY AREA</span>
-              </div>
-              <div className={styles.heroCornerLabel}>
-                <span>BLENDING CREATIVITY &amp; STRATEGY</span>
-                <span>FOR SEAMLESS EXPERIENCES</span>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>
@@ -235,37 +240,6 @@ export default function Home() {
             ]}
           />
         </div>
-      </motion.section>
-
-      {/* Testimonials slider */}
-      <motion.section
-        className={styles.section}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={sectionVariants}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-      >
-        <div className={styles.sectionHeader}>
-          <h2>What they said</h2>
-        </div>
-        <motion.div
-          className={styles.testimonialsTrack}
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            repeat: Infinity,
-            duration: 40,
-            ease: "linear"
-          }}
-        >
-          {[...testimonials, ...testimonials].map((t, index) => (
-            <article key={`${t.name}-${index}`} className={styles.testimonial}>
-              <p className={styles.quote}>"{t.quote}"</p>
-              <p className={styles.author}>{t.name}</p>
-              <p className={styles.role}>{t.role}</p>
-            </article>
-          ))}
-        </motion.div>
       </motion.section>
 
       {/* CTA */}

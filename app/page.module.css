@@ -74,6 +74,29 @@
   box-shadow: 0 18px 45px rgba(248, 113, 22, 0.35);
 }
 
+.menuToggle {
+  display: none;
+  width: 32px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.menuToggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #f9fafb;
+  border-radius: 999px;
+}
+
+.menuToggle span + span {
+  margin-top: 6px;
+}
+
 .heroSection {
   position: relative;
   height: 500vh; /* extra room so hero stays sticky until images are fully gone */
@@ -96,6 +119,7 @@
   position: absolute;
   inset: 0;
   display: flex;
+  z-index: 2; /* images above text on desktop */
 }
 
 .heroImage {
@@ -117,7 +141,7 @@
 
 .heroOverlay {
   position: relative;
-  z-index: 2;
+  z-index: 1; /* text behind sliding images */
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -313,37 +337,6 @@
   margin-top: 4px;
 }
 
-.testimonialsTrack {
-  display: flex;
-  gap: 18px;
-  width: max-content;
-}
-
-.testimonial {
-  min-width: 320px;
-  max-width: 360px;
-  padding: 20px 20px 22px;
-  border-radius: 26px;
-  background: radial-gradient(circle at top, #18181b, #020617);
-  border: 1px solid rgba(39, 39, 42, 0.9);
-}
-
-.quote {
-  font-size: 14px;
-  color: #e5e7eb;
-  margin-bottom: 10px;
-}
-
-.author {
-  font-size: 13px;
-  font-weight: 500;
-}
-
-.role {
-  font-size: 12px;
-  color: #a1a1aa;
-}
-
 .ctaSection {
   padding: 72px 0 56px;
   border-top: 1px solid rgba(39, 39, 42, 0.9);
@@ -459,16 +452,52 @@
 
 @media (max-width: 640px) {
   .header {
-    margin: -12px -12px 24px;
-    padding-inline: 16px;
+    margin: 0;
+    padding: 10px 16px;
   }
 
   .nav {
     display: none;
   }
 
+  .navCta {
+    display: none;
+  }
+
+  .menuToggle {
+    display: block;
+  }
+
   .main {
-    padding-inline: 16px;
+    padding: 56px 0 40px; /* account for fixed header height */
+  }
+
+  .heroSection {
+    height: auto;
+  }
+
+  .hero {
+    position: relative;
+    height: calc(100vh); /* both images fit in viewport below header */
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .heroImages {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column; /* stack images vertically */
+  }
+
+  .heroImage {
+    width: 100%;
+    flex: 1 1 50%; /* each image takes half of hero height */
+    height: auto;
+  }
+
+  .heroOverlay {
+    display: flex; /* show hero text on mobile as it slides up */
   }
 
   .mediaRow {

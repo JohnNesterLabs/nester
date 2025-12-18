@@ -10,39 +10,39 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "visualising-intelligence",
+    slug: "kahuna-labs",
     title: "Visualising Intelligence",
     tag: "Strategy, Identity & Web",
     thumbnail:
       "https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    industry: "Technology",
+    industry: "Frontline Productivity",
     year: "2025",
-    client: "NeuroNet"
+    client: "Kahuna Labs"
   },
   {
-    slug: "natural-conversations-with-data",
-    title: "Natural Conversations With Data",
+    slug: "conversations-data",
+    title: "Natural conversations with data",
     tag: "Natural Language, Data",
     thumbnail:
       "https://images.pexels.com/photos/6476584/pexels-photo-6476584.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    industry: "Analytics",
-    year: "2024",
-    client: "DataTone"
+    industry: "AEnterprise, AI & Multi-Agent Systems",
+    year: "2025",
+    client: "Confidential"
   },
   {
-    slug: "listening-to-ai",
-    title: "Listening to AI",
-    tag: "Interaction, Audio",
+    slug: "agentic-intake-coordinator",
+    title: "Agentic Intake Coordinator",
+    tag: "Natural Language, Conversational AI",
     thumbnail:
       "https://images.pexels.com/photos/8101528/pexels-photo-8101528.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    industry: "Consumer Tech",
-    year: "2024",
-    client: "Echoform"
+    industry: "Healthcare",
+    year: "2025",
+    client: "Confidential"
   },
   {
-    slug: "everyday-interfaces",
-    title: "Everyday Interfaces",
-    tag: "Product, UX",
+    slug: "ai-first-bank",
+    title: "AI First Bank",
+    tag: "Product - Coming Soon",
     thumbnail:
       "https://images.pexels.com/photos/1181467/pexels-photo-1181467.jpeg?auto=compress&cs=tinysrgb&w=1200",
     industry: "Banking",
@@ -50,44 +50,45 @@ export const projects: Project[] = [
     client: "Banky"
   },
   {
-    slug: "augmented-city",
-    title: "Augmented City",
-    tag: "Spatial, Systems",
+    slug: "ai-enabled-browser-security-management-portal",
+    title: "AI-enabled Browser Security Management Portal",
+    tag: "Enterprise Technology",
     thumbnail:
       "https://images.pexels.com/photos/532561/pexels-photo-532561.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    industry: "Urban",
-    year: "2023",
-    client: "Citylab"
+    industry: "Enterprise Security",
+    year: "2025",
+    client: "SquareX"
   },
   {
-    slug: "ambient-orbit",
-    title: "Ambient Orbit",
-    tag: "Motion, Identity",
-    thumbnail:
-      "https://images.pexels.com/photos/2837009/pexels-photo-2837009.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    industry: "Media",
-    year: "2023",
-    client: "Orbital"
-  },
-  {
-    slug: "signal-field",
-    title: "Signal Field",
-    tag: "Systems, Research",
+    slug: "agentic-identity-management-platform",
+    title: "Agentic Identity Management Platform",
+    tag: "Identity and Access Management, Enterprise Security",
     thumbnail:
       "https://images.pexels.com/photos/5951980/pexels-photo-5951980.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    industry: "AI",
-    year: "2022",
-    client: "Signal Labs"
+    industry: "Enterprise Security",
+    year: "2025",
+    client: "Astha.ai"
   },
   {
-    slug: "memory-atlas",
-    title: "Memory Atlas",
-    tag: "Narrative, Visual",
+    slug: "insight-assist-performance",
+    title: "Insight Assist & Performance",
+    tag: "SalesTech, AI Powered Enterprise Software",
+    thumbnail:
+      "https://images.pexels.com/photos/2837009/pexels-photo-2837009.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    industry: "Lifestyle",
+    year: "2023",
+    client: "RevOps"
+  },
+ 
+  {
+    slug: "genomic-workflow-discovery",
+    title: "Genomic Workflow Discovery",
+    tag: "AI Driven Genomics",
     thumbnail:
       "https://images.pexels.com/photos/2882506/pexels-photo-2882506.jpeg?auto=compress&cs=tinysrgb&w=1200",
-    industry: "Archives",
-    year: "2022",
-    client: "Atlas"
+    industry: "Life Sciences Technology",
+    year: "2024",
+    client: "Basepair"
   }
 ];
 

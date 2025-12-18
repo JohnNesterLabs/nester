@@ -334,6 +334,7 @@
 
 .workDetailHeader {
   margin-bottom: 40px;
+  text-align: center;
 }
 
 .workDetailTitle {
@@ -355,6 +356,7 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #a1a1aa;
+  justify-content: center;
 }
 
 .workDetailMetaItem {
@@ -372,10 +374,19 @@
   line-height: 1.9;
   color: #e5e7eb;
   max-width: 720px;
+  margin: 0 auto;
 }
 
 .workDetailBody p + p {
   margin-top: 20px;
+}
+
+.workDetailBody img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 32px auto;
 }
 
 .moreWorkSection {

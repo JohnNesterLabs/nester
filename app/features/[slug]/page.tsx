@@ -2,6 +2,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import styles from "../../page.module.css";
 import { projects } from "../../data/projects";
+import KahunaLabsContent from "../content/KahunaLabsContent";
+import ConversationsDataContent from "../content/ConversationsDataContent";
+import AgenticIntakeCoordinatorContent from "../content/AgenticIntakeCoordinatorContent";
+import AiFirstBankContent from "../content/AiFirstBankContent";
+import BrowserSecurityPortalContent from "../content/BrowserSecurityPortalContent";
+import IdentityManagementPlatformContent from "../content/IdentityManagementPlatformContent";
+import InsightAssistPerformanceContent from "../content/InsightAssistPerformanceContent";
+import GenomicWorkflowDiscoveryContent from "../content/GenomicWorkflowDiscoveryContent";
 
 type FeatureDetailPageProps = {
   params: { slug: string };
@@ -53,16 +61,24 @@ export default function FeatureDetailPage({ params }: FeatureDetailPageProps) {
         </header>
 
         <section className={styles.workDetailBody}>
-          <p>
-            We designed this project as an exploration into how intelligent systems can
-            feel warm, cinematic and deeply human while still being rigorously
-            functional. It blends motion, sound and spatial composition to create a
-            product story that unfolds over time rather than on a single static screen.
-          </p>
-          <p>
-            This is placeholder copy for now – you can replace it with your own case
-            study narrative, process notes, research insights and visual breakdowns.
-          </p>
+          {project.slug === "kahuna-labs" && <KahunaLabsContent />}
+          {project.slug === "conversations-data" && <ConversationsDataContent />}
+          {project.slug === "agentic-intake-coordinator" && (
+            <AgenticIntakeCoordinatorContent />
+          )}
+          {project.slug === "ai-first-bank" && <AiFirstBankContent />}
+          {project.slug === "ai-enabled-browser-security-management-portal" && (
+            <BrowserSecurityPortalContent />
+          )}
+          {project.slug === "agentic-identity-management-platform" && (
+            <IdentityManagementPlatformContent />
+          )}
+          {project.slug === "insight-assist-performance" && (
+            <InsightAssistPerformanceContent />
+          )}
+          {project.slug === "genomic-workflow-discovery" && (
+            <GenomicWorkflowDiscoveryContent />
+          )}
         </section>
 
         <section className={styles.moreWorkSection}>

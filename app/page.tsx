@@ -1,8 +1,9 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import styles from "./page.module.css";
+import SiteHeader from "./components/SiteHeader";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -45,9 +46,14 @@ const heroBackgrounds = [
 
 export default function Home() {
   const heroRef = useRef<HTMLDivElement | null>(null);
+  const worksRef = useRef<HTMLElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"]
+  });
+  const { scrollYProgress: worksYProgress } = useScroll({
+    target: worksRef,
+    offset: ["start start", "start start"]
   });
 
   // Scroll-based motion for hero images and hero text
@@ -62,6 +68,7 @@ export default function Home() {
   const [leftIndex, setLeftIndex] = useState(0);
   const [rightIndex, setRightIndex] = useState(1);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const [headerVariant, setHeaderVariant] = useState<"light" | "dark">("dark");
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -71,30 +78,21 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
+  // Switch header variant based on when the Featured Works section reaches the top of the viewport.
+  // - Before the top of Featured Works hits the viewport top: use "light"
+  // - Once it hits (and after): use "dark"
+  useMotionValueEvent(worksYProgress, "change", (latest) => {
+    if (latest >= 1) {
+      setHeaderVariant("dark");
+    } else {
+      setHeaderVariant("light");
+    }
+  });
+
   return (
     <main className={styles.main}>
       {/* Navbar */}
-      <header className={styles.header}>
-        <div className={styles.logo}>
-          <a href="/">
-            <img
-              src="/images/Logo_web 1.svg"
-              alt="Nester"
-              className={styles.logoImage}
-            />
-          </a>
-        </div>
-        <nav className={styles.nav}>
-          <a href="#works">Work</a>
-          <a href="#about">About Us</a>
-          <a href="/blog">Blogs</a>
-        </nav>
-        <button className={styles.navCta}>Let&apos;s talk</button>
-        <button className={styles.menuToggle} aria-label="Toggle navigation">
-          <span />
-          <span />
-        </button>
-      </header>
+      <SiteHeader variant={headerVariant} />
 
       {/* Hero – scroll-controlled split images pinned while next section comes up */}
       <section ref={heroRef} className={styles.heroSection}>
@@ -155,6 +153,7 @@ export default function Home() {
       <motion.section
         id="works"
         className={styles.section}
+        ref={worksRef}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}

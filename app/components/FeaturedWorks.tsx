@@ -67,10 +67,9 @@ export default function FeaturedWorksSection({ sectionRef }: FeaturedWorksSectio
               />
               <div className={styles.workMeta}>
                 <div>
-                  <p className={styles.workTag}>{project.tag}</p>
                   <h3 className={styles.workTitle}>{project.title}</h3>
+                  <p className={styles.workTag}>{project.tag}</p>
                 </div>
-                <span className={styles.workArrow}>↗</span>
               </div>
             </motion.article>
           </Link>

@@ -55,8 +55,8 @@
 }
 
 .logoImage {
-  height: 24px;
-  width: auto;
+  height: 20px;
+  width: 85px;
   display: block;
 }
 
@@ -317,14 +317,12 @@
 .worksGrid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columns x 2 rows for 4 projects */
-  gap: 20px;
+  gap: 40px;
   margin-bottom: 28px;
 }
 
 .workCard {
-  border-radius: 26px;
-  background: #020617;
-  border: 1px solid rgba(39, 39, 42, 0.9);
+  border-radius: 4px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -332,9 +330,8 @@
 }
 
 .workMedia {
-  aspect-ratio: 4 / 3;
-  background-image: radial-gradient(circle at top, #4b5563, #020617),
-    linear-gradient(135deg, #f97316, #ec4899);
+  border-radius: 4px;
+  aspect-ratio: 4 / 2.4;
   background-size: cover;
   background-position: center;
 }
@@ -348,15 +345,21 @@
 }
 
 .workTag {
-  font-size: 11px;
-  letter-spacing: 0.2em;
+  font-size: 14px;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #a1a1aa;
+  color: #71717a;
+  margin-top: 10px;
 }
 
 .workTitle {
-  font-size: clamp(14px, 1.1vw, 16px);
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin-bottom: 0px;
   margin-top: 4px;
+  color: #e4e4e7;
+  text-transform: uppercase;
 }
 
 .workArrow {
@@ -448,8 +451,9 @@
 }
 
 .moreWorkHeadingRow h2 {
-  font-size: 18px;
-  letter-spacing: 0.22em;
+  font-size: 40px;
+  letter-spacing: -0.02em;
+  font-weight: 400;
   text-transform: uppercase;
 }
 
@@ -463,9 +467,7 @@
 .moreWorkCard {
   min-width: 260px;
   max-width: 300px;
-  border-radius: 22px;
-  background: #020617;
-  border: 1px solid rgba(39, 39, 42, 0.9);
+  border-radius: 4px;
   overflow: hidden;
   text-decoration: none;
   color: inherit;
@@ -473,21 +475,25 @@
 }
 
 .moreWorkMedia {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4 / 2.4;
   background-size: cover;
   background-position: center;
+  border-radius: 4px;
 }
 
 .secondaryButton {
   border-radius: 999px;
   padding: 8px 20px;
-  border: 1px solid rgba(63, 63, 70, 1);
   background: transparent;
   color: #e5e7eb;
-  font-size: 13px;
+  text-decoration: none;
+  font-size: 16px;
+  font-family: "Poppins", "Poppins Placeholder", sans-serif;
   cursor: pointer;
   display: block;
   margin: 0 auto; /* center button within section */
+  text-align: center;
+  cursor: pointer;
 }
 
 .servicesSection {
@@ -604,13 +610,13 @@
 .whoGrid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 32px;
+  gap: 20px;
 }
 
 .whoCard {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 }
 
 .whoPhoto {
@@ -634,7 +640,7 @@
   font-family: "JetBrains Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-weight: 400;
   letter-spacing: 0.05em;
-  margin-bottom: 0px;
+  margin: 0px;
 }
 
 .whoRole {

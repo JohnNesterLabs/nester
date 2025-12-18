@@ -73,7 +73,7 @@ export default function FeatureDetailPage({ params }: FeatureDetailPageProps) {
 
         <section className={styles.moreWorkSection}>
           <div className={styles.moreWorkHeadingRow}>
-            <h2>More work</h2>
+            <h2>More projects</h2>
           </div>
           <div className={styles.moreWorkCarousel}>
             {moreProjects.map((item) => (

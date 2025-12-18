@@ -137,31 +137,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Who We Are */}
-      <motion.section
-        id="about"
-        className={styles.section}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={sectionVariants}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-      >
-        <div className={styles.sectionHeader}>
-          <h2>Who We Are</h2>
-          <p>
-            At Pure Visuals, we craft striking visual narratives through
-            photography, videography, and creative direction. We bring brands,
-            stories, and concepts to life with a refined artistic touch.
-          </p>
-        </div>
-        <div className={styles.mediaRow}>
-          <div className={styles.mediaCard} />
-          <div className={styles.mediaCard} />
-          <div className={styles.mediaCard} />
-        </div>
-      </motion.section>
-
       {/* Featured Works */}
       <motion.section
         id="works"
@@ -172,12 +147,8 @@ export default function Home() {
         variants={sectionVariants}
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
-        <div className={styles.sectionHeader}>
+        <div className={styles.sectionHeaderCentered}>
           <h2>Featured Works</h2>
-          <p>
-            A showcase of our finest creations—where creativity meets impact.
-            Each project reflects our passion for design and innovation.
-          </p>
         </div>
         <div className={styles.worksGrid}>
           <WorkCard title="Liquid Fusion" tag="Food & Beverage" />

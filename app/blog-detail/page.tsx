@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import styles from "../page.module.css";
 import detailStyles from "./detail.module.css";
+import SiteHeader from "../components/SiteHeader";
+import SiteFooter from "../components/SiteFooter";
 
 type FeedItem = {
   title: string;
@@ -132,20 +134,7 @@ export default function BlogDetail() {
 
   return (
     <main className={styles.main}>
-      <header className={styles.header}>
-        <div className={styles.logo}>PureVisuals</div>
-        <nav className={styles.nav}>
-          <a href="/#works">Works</a>
-          <a href="/#about">About</a>
-          <a href="/blog">Blog</a>
-          <a href="/#contact">Contact</a>
-        </nav>
-        <button className={styles.navCta}>Get Template</button>
-        <button className={styles.menuToggle} aria-label="Toggle navigation">
-          <span />
-          <span />
-        </button>
-      </header>
+      <SiteHeader />
 
       <section className={detailStyles.articleSection}>
         {loading && <p className={detailStyles.statusText}>Loading article…</p>}
@@ -169,40 +158,7 @@ export default function BlogDetail() {
         )}
       </section>
 
-      <footer className={styles.footer}>
-        <div className={styles.footerTop}>
-          <div>
-            <p className={styles.footerLabel}>About</p>
-            <div className={styles.footerLinks}>
-              <a href="/#works">Works</a>
-              <a href="/#about">About</a>
-              <a href="/blog">Blog</a>
-              <a href="/#contact">Contact</a>
-            </div>
-          </div>
-          <div>
-            <p className={styles.footerLabel}>Location</p>
-            <p className={styles.footerText}>
-              245 Park Ave
-              <br />
-              New York, NY 10110
-              <br />
-              United States
-            </p>
-          </div>
-          <div>
-            <p className={styles.footerLabel}>Socials</p>
-            <div className={styles.footerLinks}>
-              <a href="#">Instagram</a>
-              <a href="#">Twitter</a>
-              <a href="#">Behance</a>
-            </div>
-          </div>
-        </div>
-        <div className={styles.footerBottom}>
-          <span>2025 © PureVisuals</span>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

@@ -50,9 +50,10 @@ export default function Home() {
   });
 
   // Scroll-based motion for hero images and fade-out
-  const leftX = useTransform(scrollYProgress, [0, 1], ["0%", "-25%"]);
-  const rightX = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 1], [1, 0.25]);
+  // Images slide well past the viewport while the hero stays sticky
+  const leftX = useTransform(scrollYProgress, [0, 1], ["0%", "-150%"]);
+  const rightX = useTransform(scrollYProgress, [0, 1], ["0%", "150%"]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.9, 1], [1, 1, 0]);
 
   // Random background cycling for left / right hero images
   const [leftIndex, setLeftIndex] = useState(0);
@@ -79,41 +80,48 @@ export default function Home() {
         <button className={styles.navCta}>Get Template</button>
       </header>
 
-      {/* Hero – full-bleed split images with scroll + random change */}
-      <section ref={heroRef} className={styles.hero}>
-        <motion.div className={styles.heroImages} style={{ opacity: heroOpacity }}>
+      {/* Hero – scroll-controlled split images pinned while next section comes up */}
+      <section ref={heroRef} className={styles.heroSection}>
+        <div className={styles.hero}>
           <motion.div
-            className={`${styles.heroImage} ${styles.heroImageLeft}`}
-            style={{
-              x: leftX,
-              backgroundImage: heroBackgrounds[leftIndex]
-            }}
-          />
-          <motion.div
-            className={`${styles.heroImage} ${styles.heroImageRight}`}
-            style={{
-              x: rightX,
-              backgroundImage: heroBackgrounds[rightIndex]
-            }}
-          />
-        </motion.div>
-
-        <div className={styles.heroOverlay}>
-          <motion.div
-            className={styles.heroBadge}
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            transition={{ duration: 0.8 }}
+            className={styles.heroImages}
+            style={{ opacity: heroOpacity }}
           >
-            HELLO
+            <motion.div
+              className={`${styles.heroImage} ${styles.heroImageLeft}`}
+              style={{
+                x: leftX,
+                backgroundImage: heroBackgrounds[leftIndex]
+              }}
+            />
+            <motion.div
+              className={`${styles.heroImage} ${styles.heroImageRight}`}
+              style={{
+                x: rightX,
+                backgroundImage: heroBackgrounds[rightIndex]
+              }}
+            />
           </motion.div>
-          <div className={styles.heroTextBlock}>
-            <p className={styles.heroLabel}>Visual Creative Studio — Based in NYC</p>
-            <h1 className={styles.heroTitle}>PureVisuals</h1>
-            <p className={styles.heroSubtitle}>
-              Blending creativity &amp; strategy for seamless interfaces.
-            </p>
+
+          <div className={styles.heroOverlay}>
+            <motion.div
+              className={styles.heroBadge}
+              initial="hidden"
+              animate="visible"
+              variants={fadeIn}
+              transition={{ duration: 0.8 }}
+            >
+              HELLO
+            </motion.div>
+            <div className={styles.heroTextBlock}>
+              <p className={styles.heroLabel}>
+                Visual Creative Studio — Based in NYC
+              </p>
+              <h1 className={styles.heroTitle}>PureVisuals</h1>
+              <p className={styles.heroSubtitle}>
+                Blending creativity &amp; strategy for seamless interfaces.
+              </p>
+            </div>
           </div>
         </div>
       </section>

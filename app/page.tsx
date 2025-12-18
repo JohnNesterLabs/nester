@@ -260,28 +260,40 @@ export default function Home() {
         </div>
         <div className={styles.whoGrid}>
           <div className={styles.whoCard}>
-            <div className={styles.whoPhoto} />
+            <div
+              className={styles.whoPhoto}
+              style={{ backgroundImage: "url('/images/About/Frame 311.jpg')" }}
+            />
             <div className={styles.whoMeta}>
               <p className={styles.whoName}>Ankur Richhariya</p>
               <p className={styles.whoRole}>Product</p>
             </div>
           </div>
           <div className={styles.whoCard}>
-            <div className={styles.whoPhoto} />
+            <div
+              className={styles.whoPhoto}
+              style={{ backgroundImage: "url('/images/About/Frame 312.jpg')" }}
+            />
             <div className={styles.whoMeta}>
               <p className={styles.whoName}>Kunal Shrivastava</p>
               <p className={styles.whoRole}>Technology</p>
             </div>
           </div>
           <div className={styles.whoCard}>
-            <div className={styles.whoPhoto} />
+            <div
+              className={styles.whoPhoto}
+              style={{ backgroundImage: "url('/images/About/Frame 314.jpg')" }}
+            />
             <div className={styles.whoMeta}>
               <p className={styles.whoName}>Shrey Malik</p>
               <p className={styles.whoRole}>Design</p>
             </div>
           </div>
           <div className={styles.whoCard}>
-            <div className={styles.whoPhoto} />
+            <div
+              className={styles.whoPhoto}
+              style={{ backgroundImage: "url('/images/About/Frame 313.jpg')" }}
+            />
             <div className={styles.whoMeta}>
               <p className={styles.whoName}>Gaurav Gupta</p>
               <p className={styles.whoRole}>Information</p>

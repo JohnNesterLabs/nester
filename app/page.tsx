@@ -184,7 +184,6 @@ export default function Home() {
       >
         <div className={styles.servicesTitleRow}>
           <h2>Our Services</h2>
-          <span className={styles.servicesDot} />
         </div>
         <div className={styles.servicesDivider} />
 
@@ -372,12 +371,10 @@ export default function Home() {
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
         <div className={styles.finalCtaRow}>
-          <span className={styles.finalDot} />
           <div className={styles.finalCtaText}>
             <h2 className={styles.finalHeading}>
-              Turning imagination
-              <br />
-              into reality
+              <span className={styles.finalHeadingLine}>Turning imagination</span>
+              <span className={styles.finalHeadingLine}>into reality</span>
             </h2>
             <button className={styles.finalLinkButton}>Let&apos;s Talk</button>
           </div>
@@ -388,17 +385,17 @@ export default function Home() {
             <div>
               <p className={styles.footerLabel}>About</p>
               <div className={styles.footerLinks}>
-                <a href="#works">Works</a>
-                <a href="#about">About</a>
+                <a href="#works">Work</a>
+                <a href="/blog">Blog</a>
                 <a href="#contact">Let&apos;s Talk</a>
               </div>
             </div>
             <div>
               <p className={styles.footerLabel}>Location</p>
               <p className={styles.footerText}>
-                245 Park Ave
+                701 Lakeway Dr #200,
                 <br />
-                New York, NY 10110
+                Sunnyvale CA - 94085,
                 <br />
                 United States
               </p>
@@ -406,13 +403,13 @@ export default function Home() {
             <div>
               <p className={styles.footerLabel}>Contact</p>
               <div className={styles.footerLinks}>
+                <a href="#">LinkedIn</a>
                 <a href="mailto:contact@nesterlabs.com">contact@nesterlabs.com</a>
                 <a href="tel:+14086731340">+1 (408) 673-1340</a>
-                <a href="#">LinkedIn</a>
               </div>
             </div>
             <div className={styles.footerCopyright}>
-              <span>2025 © Nesterlabs</span>
+              <span>2025 © NESTERLABS</span>
             </div>
           </div>
         </footer>

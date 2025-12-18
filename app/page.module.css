@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 .main {
   min-height: 100vh;
   color: #f5f5f5;
   background: radial-gradient(circle at top, #18181b 0, #020617 55%, #000 100%);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-    sans-serif;
+  font-family: "JetBrains Mono", "IBM Plex Mono", ui-monospace, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
   padding: 0 40px 64px;
 }
 
@@ -259,8 +259,12 @@
 
 .sectionHeaderCentered h2 {
   font-size: 72px;
+  font-family: "JetBrains Mono", ui-monospace, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  line-height: 1.12;
   text-transform: uppercase;
-  letter-spacing: 0.22em;
+  letter-spacing: 0;
+  font-weight: 400;
 }
 
 .sectionHeader p {
@@ -371,9 +375,13 @@
 }
 
 .servicesTitleRow h2 {
-  font-size: clamp(32px, 3.4vw, 52px);
-  letter-spacing: 0.22em;
+  font-size: 72px;
+  font-family: "JetBrains Mono", ui-monospace, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  line-height: 1.12;
   text-transform: uppercase;
+  letter-spacing: 0;
+  font-weight: 400;
 }
 
 .servicesDot {
@@ -440,9 +448,13 @@
 }
 
 .whoTitleRow h2 {
-  font-size: clamp(32px, 3.2vw, 52px);
-  letter-spacing: 0.22em;
+  font-size: 72px;
+  font-family: "JetBrains Mono", ui-monospace, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  line-height: 1.12;
   text-transform: uppercase;
+  letter-spacing: 0;
+  font-weight: 400;
 }
 
 .whoGrid {
@@ -495,9 +507,13 @@
 }
 
 .testimonialTitleRow h2 {
-  font-size: clamp(32px, 3.2vw, 52px);
-  letter-spacing: 0.22em;
+  font-size: 72px;
+  font-family: "JetBrains Mono", ui-monospace, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  line-height: 1.12;
   text-transform: uppercase;
+  letter-spacing: 0;
+  font-weight: 400;
 }
 
 .testimonialDot {
@@ -561,7 +577,7 @@
 }
 
 .finalSection {
-  padding: 96px 0 64px;
+  padding: 96px 0 0px;
   background-color: #000;
 }
 
@@ -570,14 +586,7 @@
   align-items: center;
   justify-content: center;
   gap: 32px;
-  margin-bottom: 96px;
-}
-
-.finalDot {
-  width: 10px;
-  height: 10px;
-  border-radius: 999px;
-  background-color: #f5f5f5;
+  margin-bottom: 160px;
 }
 
 .finalCtaText {
@@ -585,20 +594,30 @@
 }
 
 .finalHeading {
-  font-size: clamp(32px, 4vw, 64px);
+  font-size: 72px;
+  font-family: "JetBrains Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   line-height: 1.12;
   text-transform: uppercase;
-  letter-spacing: 0.22em;
+  letter-spacing: 0;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.finalHeadingLine {
+  display: block;
+}
+
+.finalHeadingLine + .finalHeadingLine {
+  margin-top: 10px;
 }
 
 .finalLinkButton {
-  margin-top: 16px;
   background: none;
   border: none;
   color: #e5e7eb;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .footer {
@@ -628,12 +647,14 @@
 }
 
 .footerLinks a {
-  color: #e5e7eb;
+  color: #ffffff;
   text-decoration: none;
+  font-family: "Poppins", "Poppins Placeholder", sans-serif;
 }
 
 .footerText {
-  color: #a1a1aa;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
 }
 
 .footerBottom {
@@ -642,8 +663,8 @@
   align-items: center;
   color: #71717a;
   padding-top: 10px;
-  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+  font-family: "JetBrains Mono", "IBM Plex Mono", ui-monospace, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-size: 11px;
@@ -653,8 +674,8 @@
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
-  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace;
+  font-family: "JetBrains Mono", "IBM Plex Mono", ui-monospace, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-size: 11px;
@@ -710,6 +731,12 @@
 
   .sectionHeaderCentered h2 {
     font-size: 28px; /* mobile size for Featured Works heading */
+  }
+  .servicesTitleRow h2,
+  .whoTitleRow h2,
+  .testimonialTitleRow h2,
+  .finalHeading {
+    font-size: 28px;
   }
 
   .nav {

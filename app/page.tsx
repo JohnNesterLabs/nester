@@ -77,6 +77,7 @@ export default function Home() {
         <nav className={styles.nav}>
           <a href="#works">Works</a>
           <a href="#about">About</a>
+          <a href="/blog">Blog</a>
           <a href="#contact">Contact</a>
         </nav>
         <button className={styles.navCta}>Get Template</button>

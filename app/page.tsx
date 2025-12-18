@@ -68,7 +68,7 @@ export default function Home() {
   const [leftIndex, setLeftIndex] = useState(0);
   const [rightIndex, setRightIndex] = useState(1);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
-  const [headerVariant, setHeaderVariant] = useState<"light" | "dark">("dark");
+  const [headerVariant, setHeaderVariant] = useState<"light" | "dark">("light");
 
   useEffect(() => {
     const interval = setInterval(() => {

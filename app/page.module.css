@@ -151,6 +151,7 @@
 .heroImage {
   width: 50%;
   height: 100%;
+  background-color: #ffffff; /* white fallback so background-image change doesn't show hero bg */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

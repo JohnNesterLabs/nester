@@ -75,7 +75,13 @@ export default function Home() {
     <main className={styles.main}>
       {/* Navbar */}
       <header className={styles.header}>
-        <div className={styles.logo}>NESTER</div>
+        <div className={styles.logo}>
+          <img
+            src="/images/Logo_web 1.svg"
+            alt="Nester"
+            className={styles.logoImage}
+          />
+        </div>
         <nav className={styles.nav}>
           <a href="#works">Work</a>
           <a href="#about">About Us</a>

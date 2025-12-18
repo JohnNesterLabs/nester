@@ -28,20 +28,25 @@
 }
 
 .logo {
-  font-size: clamp(18px, 1.4vw, 22px);
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+}
+
+.logoImage {
+  height: 24px;
+  width: auto;
+  display: block;
 }
 
 .nav {
   display: flex;
   gap: 24px;
   font-size: clamp(13px, 1.1vw, 15px);
+  color: black;
 }
 
 .nav a {
-  color: #e5e7eb;
+  color: black;
   text-decoration: none;
   position: relative;
   padding-bottom: 4px;
@@ -54,7 +59,7 @@
   bottom: 0;
   width: 0;
   height: 1px;
-  background: #f97316;
+  background: black;
   transition: width 0.2s ease;
 }
 
@@ -63,13 +68,13 @@
 }
 
 .navCta {
-  padding: 8px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(249, 115, 22, 0.5);
-  background: radial-gradient(circle at top left, #f97316, #7c2d12);
-  color: #f9fafb;
-  font-size: clamp(12px, 0.95vw, 14px);
-  font-weight: 500;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  color: black;
+  font-size: clamp(13px, 1.1vw, 15px);
+  font-weight: 400;
   cursor: pointer;
 }
 

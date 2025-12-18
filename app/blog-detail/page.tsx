@@ -8,7 +8,7 @@ import BlogDetailClient from "./BlogDetailClient";
 export default function BlogDetailPage() {
   return (
     <main className={styles.main}>
-      <SiteHeader />
+      <SiteHeader variant="dark" />
 
       <Suspense
         fallback={

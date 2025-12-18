@@ -101,7 +101,7 @@ export default function BlogList() {
 
   return (
     <main className={styles.main}>
-      <SiteHeader />
+      <SiteHeader variant="dark" />
 
       <section className={blogStyles.blogSection}>
         <div className={blogStyles.blogHeader}>

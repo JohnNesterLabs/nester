@@ -3,15 +3,26 @@
 import Link from "next/link";
 import styles from "../page.module.css";
 
-export default function SiteHeader() {
+type SiteHeaderProps = {
+  variant?: "light" | "dark";
+};
+
+export default function SiteHeader({ variant = "light" }: SiteHeaderProps) {
+  const isDark = variant === "dark";
+  const logoSrc = isDark ? "/images/Logo White.svg" : "/images/Logo_web 1.svg";
+
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${isDark ? styles.headerDark : ""}`}
+    >
       <div className={styles.logo}>
-        <img
-          src="/images/Logo_web 1.svg"
-          alt="Nester"
-          className={styles.logoImage}
-        />
+        <Link href="/">
+          <img
+            src={logoSrc}
+            alt="Nester"
+            className={styles.logoImage}
+          />
+        </Link>
       </div>
       <nav className={styles.nav}>
         <Link href="/#works">Work</Link>

@@ -27,6 +27,26 @@
   backdrop-filter: blur(18px);
 }
 
+.headerDark {
+  color: #f9fafb;
+}
+
+.headerDark .nav {
+  color: #f9fafb;
+}
+
+.headerDark .nav a {
+  color: #f9fafb;
+}
+
+.headerDark .nav a::after {
+  background: #f9fafb;
+}
+
+.headerDark .navCta {
+  color: #f9fafb;
+}
+
 .logo {
   display: flex;
   align-items: center;

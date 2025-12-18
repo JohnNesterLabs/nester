@@ -76,11 +76,13 @@ export default function Home() {
       {/* Navbar */}
       <header className={styles.header}>
         <div className={styles.logo}>
-          <img
-            src="/images/Logo_web 1.svg"
-            alt="Nester"
-            className={styles.logoImage}
-          />
+          <a href="/">
+            <img
+              src="/images/Logo_web 1.svg"
+              alt="Nester"
+              className={styles.logoImage}
+            />
+          </a>
         </div>
         <nav className={styles.nav}>
           <a href="#works">Work</a>

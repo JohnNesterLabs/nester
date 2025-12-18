@@ -161,55 +161,124 @@ export default function Home() {
 
       {/* Services */}
       <motion.section
-        className={styles.section}
+        className={styles.servicesSection}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={sectionVariants}
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
-        <div className={styles.sectionHeader}>
+        <div className={styles.servicesTitleRow}>
           <h2>Our Services</h2>
+          <span className={styles.servicesDot} />
         </div>
-        <div className={styles.servicesGrid}>
-          <ServiceColumn
-            title="Photography"
-            items={[
-              "Commercial Photography",
-              "Portrait Photography",
-              "Architectural Photography",
-              "Event Photography"
-            ]}
-          />
-          <ServiceColumn
-            title="Videography"
-            items={[
-              "Brand Films",
-              "Social Media Content",
-              "Aerial Videography",
-              "Event Videography",
-              "Cinematic Productions"
-            ]}
-          />
-          <ServiceColumn
-            title="Visual Direction"
-            items={[
-              "Art Direction",
-              "Wardrobe & Fashion Styling",
-              "Visual Strategy",
-              "Set & Prop Styling",
-              "Storytelling"
-            ]}
-          />
-          <ServiceColumn
-            title="Post-Production & Retouching"
-            items={[
-              "Photo Editing & Retouching",
-              "Color Correction & Grading",
-              "Video Editing",
-              "3D & CGI Integration"
-            ]}
-          />
+        <div className={styles.servicesDivider} />
+
+        <div className={styles.serviceRows}>
+          <div className={styles.serviceRow}>
+            <div className={styles.serviceRowLabel}>Human</div>
+            <div className={styles.serviceRowColumns}>
+              <ul>
+                <li>Research</li>
+                <li>Product Design</li>
+                <li>Voice &amp; Emotion</li>
+              </ul>
+              <ul>
+                <li>Strategy</li>
+                <li>Brand &amp; Identity</li>
+                <li>Immersive Experiences</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className={styles.serviceRow}>
+            <div className={styles.serviceRowLabel}>Intelligence</div>
+            <div className={styles.serviceRowColumns}>
+              <ul>
+                <li>Agentic AI &amp; MCP</li>
+                <li>Natural Language Engines</li>
+                <li>Prosody &amp; Analysis</li>
+              </ul>
+              <ul>
+                <li>RAG &amp; Context</li>
+                <li>Emotion Strategy</li>
+                <li>Synthesizing + Output</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className={styles.serviceRow}>
+            <div className={styles.serviceRowLabel}>Memory</div>
+            <div className={styles.serviceRowColumns}>
+              <ul>
+                <li>Knowledge Graph &amp; Retrieval</li>
+                <li>Analysis Pipelines</li>
+              </ul>
+              <ul>
+                <li>Context Streamlining</li>
+                <li>Privacy &amp; Guardrails</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className={styles.serviceRow}>
+            <div className={styles.serviceRowLabel}>Cloud</div>
+            <div className={styles.serviceRowColumns}>
+              <ul>
+                <li>Cloud &amp; AI Platforms</li>
+                <li>Infra Security &amp; Compliance</li>
+              </ul>
+              <ul>
+                <li>DevOps &amp; CI/CD</li>
+                <li>Global Reliability</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </motion.section>
+
+      {/* Who We Are */}
+      <motion.section
+        id="about"
+        className={styles.whoSection}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={sectionVariants}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
+        <div className={styles.whoTitleRow}>
+          <h2>Who We Are</h2>
+        </div>
+        <div className={styles.whoGrid}>
+          <div className={styles.whoCard}>
+            <div className={styles.whoPhoto} />
+            <div className={styles.whoMeta}>
+              <p className={styles.whoName}>Ankur Richhariya</p>
+              <p className={styles.whoRole}>Product</p>
+            </div>
+          </div>
+          <div className={styles.whoCard}>
+            <div className={styles.whoPhoto} />
+            <div className={styles.whoMeta}>
+              <p className={styles.whoName}>Kunal Shrivastava</p>
+              <p className={styles.whoRole}>Technology</p>
+            </div>
+          </div>
+          <div className={styles.whoCard}>
+            <div className={styles.whoPhoto} />
+            <div className={styles.whoMeta}>
+              <p className={styles.whoName}>Shrey Malik</p>
+              <p className={styles.whoRole}>Design</p>
+            </div>
+          </div>
+          <div className={styles.whoCard}>
+            <div className={styles.whoPhoto} />
+            <div className={styles.whoMeta}>
+              <p className={styles.whoName}>Gaurav Gupta</p>
+              <p className={styles.whoRole}>Information</p>
+            </div>
+          </div>
         </div>
       </motion.section>
 

@@ -151,7 +151,7 @@ export default function Home() {
       </section>
 
       {/* Featured Works */}
-      <FeaturedWorksSection />
+      <FeaturedWorksSection sectionRef={worksRef} />
 
       {/* Services */}
       <motion.section

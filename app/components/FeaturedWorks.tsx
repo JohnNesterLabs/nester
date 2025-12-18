@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import styles from "../page.module.css";
 import { projects } from "../data/projects";
+import type { RefObject } from "react";
 
 const sectionVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -29,11 +30,16 @@ function WorkCard({ title, tag }: { title: string; tag: string }) {
   );
 }
 
-export default function FeaturedWorksSection() {
+type FeaturedWorksSectionProps = {
+  sectionRef?: RefObject<HTMLElement>;
+};
+
+export default function FeaturedWorksSection({ sectionRef }: FeaturedWorksSectionProps) {
   return (
     <motion.section
       id="works"
       className={styles.section}
+      ref={sectionRef}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}

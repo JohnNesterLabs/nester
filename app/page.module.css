@@ -255,6 +255,8 @@
 
 .sectionHeaderCentered {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   margin-bottom: 32px;
   text-align: center;
@@ -268,6 +270,15 @@
   text-transform: uppercase;
   letter-spacing: 0;
   font-weight: 400;
+}
+
+.sectionHeaderSub {
+  max-width: 800px;
+  margin: 24px auto 0;
+  font-family: "Poppins", "Poppins Placeholder", sans-serif;
+  color: #e4e4e7;
+  font-size: 16px;
+  text-align: center;
 }
 
 .sectionHeader p {
@@ -360,7 +371,7 @@
 }
 
 .worksPageSection {
-  padding: 112px 0 64px;
+  padding: 112px 60px 64px;
 }
 
 .workDetailSection {

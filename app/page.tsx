@@ -131,11 +131,15 @@ export default function Home() {
               <p className={styles.heroTitleLine}>TECHNOLOGY</p>
 
               <div className={styles.heroCornerRow}>
-                <div className={styles.heroCornerLabel}>
+                <div
+                  className={`${styles.heroCornerLabel} ${styles.heroCornerLabelLeft}`}
+                >
                   <span>AI ACCELERATED STUDIO</span>
                   <span>BASED IN SF BAY AREA</span>
                 </div>
-                <div className={styles.heroCornerLabel}>
+                <div
+                  className={`${styles.heroCornerLabel} ${styles.heroCornerLabelRight}`}
+                >
                   <span>BLENDING CREATIVITY &amp; STRATEGY</span>
                   <span>FOR SEAMLESS EXPERIENCES</span>
                 </div>

@@ -1,7 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import FeaturedWorksSection from "./components/FeaturedWorks";
 import styles from "./page.module.css";
 
 const sectionVariants = {
@@ -75,7 +77,7 @@ export default function Home() {
       <header className={styles.header}>
         <div className={styles.logo}>PureVisuals</div>
         <nav className={styles.nav}>
-          <a href="#works">Works</a>
+          <Link href="/features">Features</Link>
           <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -138,26 +140,7 @@ export default function Home() {
       </section>
 
       {/* Featured Works */}
-      <motion.section
-        id="works"
-        className={styles.section}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={sectionVariants}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-      >
-        <div className={styles.sectionHeaderCentered}>
-          <h2>Featured Works</h2>
-        </div>
-        <div className={styles.worksGrid}>
-          <WorkCard title="Liquid Fusion" tag="Food & Beverage" />
-          <WorkCard title="Hyper Drive" tag="Product" />
-          <WorkCard title="Eclipse Studio" tag="Product" />
-          <WorkCard title="Archive_199X" tag="Visual Direction" />
-        </div>
-        <button className={styles.secondaryButton}>More Works</button>
-      </motion.section>
+      <FeaturedWorksSection />
 
       {/* Services */}
       <motion.section
@@ -344,41 +327,4 @@ export default function Home() {
     </main>
   );
 }
-
-function WorkCard({ title, tag }: { title: string; tag: string }) {
-  return (
-    <motion.article
-      className={styles.workCard}
-      whileHover={{ y: -8, scale: 1.02 }}
-      transition={{ type: "spring", stiffness: 260, damping: 20 }}
-    >
-      <div className={styles.workMedia} />
-      <div className={styles.workMeta}>
-        <div>
-          <p className={styles.workTag}>{tag}</p>
-          <h3 className={styles.workTitle}>{title}</h3>
-        </div>
-        <span className={styles.workArrow}>↗</span>
-      </div>
-    </motion.article>
-  );
-}
-
-function ServiceColumn({ title, items }: { title: string; items: string[] }) {
-  return (
-    <motion.div
-      className={styles.serviceColumn}
-      whileHover={{ y: -6 }}
-      transition={{ type: "spring", stiffness: 200, damping: 18 }}
-    >
-      <h3>{title}</h3>
-      <ul>
-        {items.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ul>
-    </motion.div>
-  );
-}
-
 

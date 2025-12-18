@@ -548,7 +548,7 @@
 .serviceCard {
   position: sticky;
   top: 160px;
-  padding: 40px 40px 56px; /* a bit taller for more breathing room */
+  padding: 40px 0px 56px; /* a bit taller for more breathing room */
   border-radius: 0;
   border-top: 1px solid rgba(148, 163, 184, 0.7); /* line only at the top */
   border-right: none;
@@ -560,15 +560,15 @@
 }
 
 .serviceCardLabel {
-  font-size: 20px;
+  font-size: 40px;
   text-transform: uppercase;
-  letter-spacing: 0.28em;
+  letter-spacing: -0.02em;
   margin-bottom: 24px;
 }
 
 .serviceCardColumns {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1fr) minmax(0, 1fr);
   gap: 32px;
   font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;

@@ -1,8 +1,12 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "PureVisuals Studio",
-  description: "Visual creative studio – photography, videography, and visual direction."
+  title: "Nester Labs – Reimagining Intelligence",
+  description:
+    "Nester Labs is an AI-accelerated studio reimagining intelligence through research, design, and technology.",
+  icons: {
+    icon: "/favicon/MacBook Air - 1.svg"
+  }
 };
 
 export default function RootLayout({

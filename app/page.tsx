@@ -169,8 +169,8 @@ export default function Home() {
 
         <div className={styles.serviceStack}>
           <div className={styles.serviceCard}>
-            <div className={styles.serviceCardLabel}>Human</div>
             <div className={styles.serviceCardColumns}>
+              <div className={styles.serviceCardLabel}>Human</div>
               <ul>
                 <li>Research</li>
                 <li>Product Design</li>
@@ -185,8 +185,8 @@ export default function Home() {
           </div>
 
           <div className={styles.serviceCard}>
-            <div className={styles.serviceCardLabel}>Intelligence</div>
             <div className={styles.serviceCardColumns}>
+              <div className={styles.serviceCardLabel}>Intelligence</div>
               <ul>
                 <li>Agentic AI &amp; MCP</li>
                 <li>Natural Language Engines</li>
@@ -201,8 +201,8 @@ export default function Home() {
           </div>
 
           <div className={styles.serviceCard}>
-            <div className={styles.serviceCardLabel}>Memory</div>
             <div className={styles.serviceCardColumns}>
+              <div className={styles.serviceCardLabel}>Memory</div>
               <ul>
                 <li>Knowledge Graph &amp; Retrieval</li>
                 <li>Analysis Pipelines</li>
@@ -215,8 +215,8 @@ export default function Home() {
           </div>
 
           <div className={styles.serviceCard}>
-            <div className={styles.serviceCardLabel}>Cloud</div>
             <div className={styles.serviceCardColumns}>
+              <div className={styles.serviceCardLabel}>Cloud</div>
               <ul>
                 <li>Cloud &amp; AI Platforms</li>
                 <li>Infra Security &amp; Compliance</li>

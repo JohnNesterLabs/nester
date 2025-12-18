@@ -65,7 +65,7 @@ export default function Home() {
     const interval = setInterval(() => {
       setLeftIndex((prev) => (prev + 1) % heroBackgrounds.length);
       setRightIndex((prev) => (prev + 1) % heroBackgrounds.length);
-    }, 7000);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 

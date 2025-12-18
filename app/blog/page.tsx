@@ -105,9 +105,12 @@ export default function BlogList() {
 
       <section className={blogStyles.blogSection}>
         <div className={blogStyles.blogHeader}>
-          <h1 className={blogStyles.blogTitle}>Journal</h1>
+          <h1 className={blogStyles.blogTitle}>Blog</h1>
           <p className={blogStyles.blogSubtitle}>
-            Thoughts, experiments, and perspectives from the PureVisuals studio.
+            A showcase of our finest creations&mdash;where creativity meets impact. From bold branding
+            to immersive digital experiences, each project reflects our passion for design and
+            innovation. Explore how we bring ideas to life through thoughtful execution and striking
+            visuals.
           </p>
         </div>
 

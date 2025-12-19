@@ -390,7 +390,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 32px;
+  margin-bottom: 60px;
   text-align: center;
 }
 
@@ -402,6 +402,7 @@
   text-transform: uppercase;
   letter-spacing: 0;
   font-weight: 400;
+  margin-bottom: 16px;
 }
 
 .sectionHeaderSub {

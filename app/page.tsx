@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-mot
 import { useEffect, useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import styles from "./page.module.css";
+import Link from "next/link";
 import SiteHeader from "./components/SiteHeader";
 import SiteFooter from "./components/SiteFooter";
 import FeaturedWorksSection from "./components/FeaturedWorks";
@@ -581,7 +582,7 @@ export default function Home() {
               <span className={styles.finalHeadingLine}>Turning imagination</span>
               <span className={styles.finalHeadingLine}>into reality</span>
             </h2>
-            <button className={styles.finalLinkButton}>Let&apos;s Talk</button>
+            <Link href="/contact" className={styles.finalLinkButton}>Let&apos;s Talk</Link>
           </div>
         </div>
 

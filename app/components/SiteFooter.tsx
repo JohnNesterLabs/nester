@@ -27,7 +27,7 @@ export default function SiteFooter() {
         <div>
           <p className={styles.footerLabel}>Contact</p>
           <div className={styles.footerLinks}>
-            <a href="#">LinkedIn</a>
+            <a href="https://www.linkedin.com/company/nester-labs/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a href="mailto:contact@nesterlabs.com">contact@nesterlabs.com</a>
             <a href="tel:+14086731340">+1 (408) 673-1340</a>
           </div>

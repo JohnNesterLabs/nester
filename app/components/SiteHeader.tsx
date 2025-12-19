@@ -43,9 +43,9 @@ export default function SiteHeader({ variant = "light", isHeroTextAtTop = false 
           <Link href="/#works">Work</Link>
           <Link href="/#about">About Us</Link>
           <Link href="/blog">Blogs</Link>
-          <Link href="https://nesteraibot.web.app/" target="_blank" rel="noopener noreferrer">NesterAI</Link>
+          {/* <Link href="https://nesteraibot.web.app/" target="_blank" rel="noopener noreferrer">NesterAI</Link> */}
         </nav>
-        <Link href="/contact" className={styles.navCta}>Let&apos;s talk</Link>
+        <Link href="/contact" className={styles.navCta}>Let&apos;s Talk</Link>
         <button 
           className={`${styles.menuToggle} ${isMenuOpen ? styles.menuToggleOpen : ""} ${isHomePage && !isHeroTextAtTop ? styles.menuToggleHome : styles.menuToggleOther}`}
           onClick={toggleMenu}
@@ -80,7 +80,7 @@ export default function SiteHeader({ variant = "light", isHeroTextAtTop = false 
               <Link href="/#works" onClick={closeMenu}>Work</Link>
               <Link href="/#about" onClick={closeMenu}>About Us</Link>
               <Link href="/blog" onClick={closeMenu}>Blogs</Link>
-              <Link href="https://nesteraibot.web.app/" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>Nester AI</Link>
+              {/* <Link href="https://nesteraibot.web.app/" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>Nester AI</Link> */}
               <Link href="/contact" className={styles.mobileMenuCta} onClick={closeMenu}>Let&apos;s Talk</Link>
             </div>
           </nav>

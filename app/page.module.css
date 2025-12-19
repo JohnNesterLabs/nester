@@ -104,6 +104,8 @@
   font-weight: 400;
   cursor: pointer;
   font-family: "Poppins", "Poppins Placeholder", sans-serif;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .menuToggle {
@@ -236,6 +238,8 @@
   letter-spacing: 0.05em;
   cursor: pointer;
   text-align: left;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .heroSection {

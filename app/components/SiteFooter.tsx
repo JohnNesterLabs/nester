@@ -11,7 +11,7 @@ export default function SiteFooter() {
           <div className={styles.footerLinks}>
             <a href="#works">Work</a>
             <a href="/blog">Blog</a>
-            <a href="#contact">Let&apos;s Talk</a>
+            <a href="/contact">Let&apos;s Talk</a>
           </div>
         </div>
         <div>

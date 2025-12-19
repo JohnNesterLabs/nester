@@ -1,0 +1,202 @@
+.contactSection {
+  padding: 120px 40px 80px;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.contactContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.contactTitle {
+  font-family: "JetBrains Mono", "JetBrains Mono Placeholder", sans-serif;
+  font-size: 72px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #e4e4e7;
+  margin: 0;
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contactLabel {
+  font-family: "Poppins", "Poppins Placeholder", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #71717a;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contactValue {
+  font-family: "JetBrains Mono", "JetBrains Mono Placeholder", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #e4e4e7;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.contactValue:hover {
+  opacity: 0.8;
+}
+
+.contactForm {
+  width: 100%;
+}
+
+.formGroup {
+  margin-bottom: 24px;
+}
+
+.formLabel {
+  display: block;
+  font-family: "Poppins", "Poppins Placeholder", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #71717a;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.formInput,
+.formTextarea {
+  width: 100%;
+  padding: 16px;
+  background-color: #27272a;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 4px;
+  color: #e4e4e7;
+  font-family: "Poppins", "Poppins Placeholder", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  border-color: rgba(148, 163, 184, 0.5);
+}
+
+.formInput::placeholder,
+.formTextarea::placeholder {
+  color: #71717a;
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 16px 24px;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 4px;
+  font-family: "Poppins", "Poppins Placeholder", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: opacity 0.2s ease;
+}
+
+.submitButton:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 1024px) {
+  .contactContainer {
+    gap: 60px;
+  }
+
+  .contactTitle {
+    font-size: 56px;
+  }
+}
+
+@media (max-width: 640px) {
+  .contactSection {
+    padding: 80px 20px 40px;
+  }
+
+  .contactContainer {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contactInfo {
+    gap: 32px;
+  }
+
+  .contactTitle {
+    font-size: 40px;
+    margin-bottom: 0;
+  }
+
+  .contactItem {
+    gap: 6px;
+  }
+
+  .contactLabel {
+    font-size: 12px;
+  }
+
+  .contactValue {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .contactForm {
+    margin-top: 0;
+  }
+
+  .formGroup {
+    margin-bottom: 20px;
+  }
+
+  .formLabel {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .formInput,
+  .formTextarea {
+    font-size: 14px;
+    padding: 14px;
+  }
+
+  .formTextarea {
+    min-height: 100px;
+  }
+
+  .submitButton {
+    font-size: 14px;
+    padding: 14px 24px;
+    margin-top: 4px;
+  }
+}
+

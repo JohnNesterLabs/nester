@@ -41,7 +41,7 @@ export default function SiteHeader({ variant = "light", isHeroTextAtTop = false 
           <Link href="/#about">About Us</Link>
           <Link href="/blog">Blogs</Link>
         </nav>
-        <button className={styles.navCta}>Let&apos;s talk</button>
+        <Link href="/contact" className={styles.navCta}>Let&apos;s talk</Link>
         <button 
           className={`${styles.menuToggle} ${isMenuOpen ? styles.menuToggleOpen : ""}`}
           onClick={toggleMenu}
@@ -76,7 +76,7 @@ export default function SiteHeader({ variant = "light", isHeroTextAtTop = false 
               <Link href="/#works" onClick={closeMenu}>Work</Link>
               <Link href="/#about" onClick={closeMenu}>About Us</Link>
               <Link href="/blog" onClick={closeMenu}>Blogs</Link>
-              <button className={styles.mobileMenuCta} onClick={closeMenu}>Let&apos;s Talk</button>
+              <Link href="/contact" className={styles.mobileMenuCta} onClick={closeMenu}>Let&apos;s Talk</Link>
             </div>
           </nav>
         </div>

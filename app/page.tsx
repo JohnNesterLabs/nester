@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { flushSync } from "react-dom";
 import styles from "./page.module.css";
 import SiteHeader from "./components/SiteHeader";
 import FeaturedWorksSection from "./components/FeaturedWorks";
@@ -48,8 +49,14 @@ const testimonials = [
 ];
 
 // Use pure images for hero backgrounds (no dark overlay), so white images stay pure
-const heroBackgrounds = [
+// Separate arrays for left and right sides - you can customize each independently
+const leftHeroBackgrounds = [
   "url('/images/hero-1.png')",
+  "url('/images/hero-2.png')",
+  "url('/images/hero-3.png')"
+];
+
+const rightHeroBackgrounds = [
   "url('/images/hero-2.png')",
   "url('/images/hero-3.png')",
   "url('/images/hero-4.png')"
@@ -61,7 +68,7 @@ export default function Home() {
   const serviceStackRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
-    offset: ["start start", "end start"]
+    offset: ["start start", "end end"]
   });
   const { scrollYProgress: worksYProgress } = useScroll({
     target: worksRef,
@@ -76,19 +83,41 @@ export default function Home() {
   const textY = useTransform(scrollYProgress, [0, 0.4, 1], ["150%", "0%", "-8%"]);
   const textOpacity = useTransform(scrollYProgress, [0, 0.15, 0.6], [0, 1, 1]);
 
-  // Random background cycling for left / right hero images
-  const [leftIndex, setLeftIndex] = useState(0);
-  const [rightIndex, setRightIndex] = useState(1);
+  // Separate background cycling for left / right hero images with opacity transitions
+  const [leftActiveImageIndex, setLeftActiveImageIndex] = useState(0);
+  const [rightActiveImageIndex, setRightActiveImageIndex] = useState(0);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
   const [headerVariant, setHeaderVariant] = useState<"light" | "dark">("light");
 
+  // Preload all hero images to prevent loading delays
   useEffect(() => {
-    const interval = setInterval(() => {
-      setLeftIndex((prev) => (prev + 1) % heroBackgrounds.length);
-      setRightIndex((prev) => (prev + 1) % heroBackgrounds.length);
-    }, 3000);
-    return () => clearInterval(interval);
+    [...leftHeroBackgrounds, ...rightHeroBackgrounds].forEach((bgUrl) => {
+      const img = new Image();
+      img.src = bgUrl.replace("url('", "").replace("')", "");
+    });
   }, []);
+
+  // Left side image cycling with 1.5s delay between transitions and 0.8s fade duration
+  useEffect(() => {
+    const transitionDelay = 1500; // 1.5 seconds between image changes
+    
+    const timeout = setTimeout(() => {
+      setLeftActiveImageIndex((prev) => (prev + 1) % leftHeroBackgrounds.length);
+    }, transitionDelay);
+
+    return () => clearTimeout(timeout);
+  }, [leftActiveImageIndex]);
+
+  // Right side image cycling with 1.5s delay between transitions and 0.8s fade duration
+  useEffect(() => {
+    const transitionDelay = 1500; // 1.5 seconds between image changes
+    
+    const timeout = setTimeout(() => {
+      setRightActiveImageIndex((prev) => (prev + 1) % rightHeroBackgrounds.length);
+    }, transitionDelay);
+
+    return () => clearTimeout(timeout);
+  }, [rightActiveImageIndex]);
 
   // Switch header variant based on when the Featured Works section reaches the top of the viewport.
   // - Before the top of Featured Works hits the viewport top: use "light"
@@ -158,20 +187,60 @@ export default function Home() {
             className={styles.heroImages}
             style={{ opacity: heroOpacity }}
           >
+            {/* Left side images - all images stacked, opacity controlled */}
             <motion.div
               className={`${styles.heroImage} ${styles.heroImageLeft}`}
-              style={{
-                x: leftX,
-                backgroundImage: heroBackgrounds[leftIndex]
-              }}
-            />
+              style={{ x: leftX }}
+            >
+              {leftHeroBackgrounds.map((bg, index) => (
+                <motion.div
+                  key={`left-${index}`}
+                  className={styles.heroImageLayer}
+                  style={{
+                    backgroundImage: bg,
+                    position: 'absolute',
+                    inset: 0,
+                  }}
+                  animate={{
+                    opacity: leftActiveImageIndex === index ? 1 : 0,
+                  }}
+                  transition={{
+                    duration: 0.8,
+                    ease: "easeInOut",
+                  }}
+                  initial={{
+                    opacity: index === 0 ? 1 : 0, // Initial state: first image 100%, others 0%
+                  }}
+                />
+              ))}
+            </motion.div>
+            {/* Right side images - all images stacked, opacity controlled */}
             <motion.div
               className={`${styles.heroImage} ${styles.heroImageRight}`}
-              style={{
-                x: rightX,
-                backgroundImage: heroBackgrounds[rightIndex]
-              }}
-            />
+              style={{ x: rightX }}
+            >
+              {rightHeroBackgrounds.map((bg, index) => (
+                <motion.div
+                  key={`right-${index}`}
+                  className={styles.heroImageLayer}
+                  style={{
+                    backgroundImage: bg,
+                    position: 'absolute',
+                    inset: 0,
+                  }}
+                  animate={{
+                    opacity: rightActiveImageIndex === index ? 1 : 0,
+                  }}
+                  transition={{
+                    duration: 0.8,
+                    ease: "easeInOut",
+                  }}
+                  initial={{
+                    opacity: index === 0 ? 1 : 0, // Initial state: first image 100%, others 0%
+                  }}
+                />
+              ))}
+            </motion.div>
           </motion.div>
 
           <div className={styles.heroOverlay}>

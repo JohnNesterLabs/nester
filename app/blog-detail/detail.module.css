@@ -23,8 +23,8 @@
 .postTitle {
   font-size: 38px;
   line-height: 1.3;
-  font-weight: 800;
   margin: 12px 0 12px;
+  font-family: "Poppins", "Poppins Placeholder", sans-serif;
 }
 
 .postMeta {
@@ -34,9 +34,11 @@
 }
 
 .postContent {
-  font-size: 18px;
-  line-height: 1.8;
-  color: #e5e7eb;
+  font-family: "Poppins", "Poppins Placeholder", sans-serif;
+  font-size: 16px;
+  line-height: 1.8em;
+  letter-spacing: 0em;
+  color: #e4e4e7;
 }
 
 .postContent p {
@@ -47,10 +49,11 @@
 .postContent h2,
 .postContent h3,
 .postContent h4 {
+  font-family: "Poppins", "Poppins Placeholder", sans-serif;
   font-weight: 700;
   line-height: 1.4;
   margin: 40px 0 20px;
-  color: #f9fafb;
+  color: #e4e4e7;
 }
 
 .postContent h1 {
@@ -78,11 +81,11 @@
 }
 
 .postContent pre {
+  font-family: "Poppins", "Poppins Placeholder", sans-serif;
   overflow: auto;
   padding: 12px;
   border: 1px solid #27272a;
   border-radius: 8px;
-  background: #020617;
   margin: 28px 0;
 }
 
@@ -98,7 +101,11 @@
   }
 
   .postTitle {
-    font-size: 30px;
+    font-size: 28px;
+  }
+
+  .postContent{
+    font-size: 16px;
   }
 }
 

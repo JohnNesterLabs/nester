@@ -108,6 +108,7 @@
     font-family: "Poppins", "Poppins Placeholder", sans-serif;
     text-decoration: none;
     color: #e4e4e7;
+    cursor: pointer;
   }
   
   @media (max-width: 1024px) {

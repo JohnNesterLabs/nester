@@ -266,6 +266,16 @@
   background-position: center;
   background-repeat: no-repeat;
   will-change: transform;
+  position: relative; /* Allow absolute positioning of child layers */
+}
+
+.heroImageLayer {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  will-change: opacity;
 }
 
 .heroImageLeft {

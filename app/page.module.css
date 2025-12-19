@@ -908,6 +908,10 @@
     font-size: 28px;
   }
 
+  .finalSection {
+    padding: 0 20px;
+  }
+
   .nav {
     display: none;
   }
@@ -973,7 +977,33 @@
   }
 
   .footerTop {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
+  }
+
+  .footerTop > div:nth-child(1) {
+    /* About - column 1, row 1 */
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .footerTop > div:nth-child(2) {
+    /* Location - column 2, row 1 */
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .footerTop > div:nth-child(3) {
+    /* Contact - column 1, row 2 */
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .footerTop > div:nth-child(4) {
+    /* Copyright - column 2, row 2 (at bottom of Location column) */
+    grid-column: 2;
+    grid-row: 2;
+    justify-content: start;
   }
 }
 

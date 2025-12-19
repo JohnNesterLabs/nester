@@ -1276,6 +1276,7 @@
   }
 
   .sectionHeaderCentered h2 {
+    text-align: left;
     font-size: 28px; /* mobile size for Featured Works heading */
   }
   .servicesTitleRow h2,

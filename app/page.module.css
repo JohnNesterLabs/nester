@@ -1216,6 +1216,10 @@
 }
 
 @media (max-width: 640px) {
+  .section {
+    padding: 36px 20px;
+  }
+
   .header {
     margin: 0;
     padding: 10px 16px;
@@ -1388,7 +1392,7 @@
   }
 
   .whoSection {
-    padding: 40px 20px;
+    padding: 40px 40px;
   }
 
   .whoGrid {

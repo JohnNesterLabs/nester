@@ -243,6 +243,9 @@ export default function Home() {
         <div className={styles.whoTitleRow}>
           <h2>Who We Are</h2>
         </div>
+        <p className={styles.whoDescription}>
+          Our founders collectively bring more than 85 years of expertise in helping businesses integrate advanced technologies and optimise their existing product experiences.
+        </p>
         <div className={styles.whoGrid}>
           <div className={styles.whoCard}>
             <div

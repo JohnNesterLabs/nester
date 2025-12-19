@@ -607,6 +607,10 @@
   font-weight: 400;
 }
 
+.whoDescription {
+  display: none; /* Hidden on desktop, shown on mobile */
+}
+
 .whoGrid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -630,8 +634,6 @@
 }
 
 .whoMeta {
-  font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
   text-transform: uppercase;
 }
 
@@ -641,6 +643,7 @@
   font-weight: 400;
   letter-spacing: 0.05em;
   margin: 0px;
+  color: #e4e4e7;
 }
 
 .whoRole {
@@ -668,6 +671,7 @@
   text-transform: uppercase;
   letter-spacing: 0;
   font-weight: 400;
+  color: #e4e4e7;
 }
 
 .testimonialDot {
@@ -687,7 +691,7 @@
 .testimonialQuote {
   font-size: 18px;
   line-height: 1.8em;
-  color: #e5e7eb;
+  color: #e4e4e7;
   font-family: "Poppins", "Poppins Placeholder", sans-serif;
   font-weight: 400;
   margin-bottom: 32px;
@@ -908,8 +912,32 @@
     font-size: 28px;
   }
 
+  .testimonialSection {
+    padding: 40px 20px;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.7);
+  }
+
+  .testimonialTitleRow {
+    margin-bottom: 120px;
+  }
+
+  .testimonialQuote {
+    font-size: 16px;
+    line-height: 1.8em;
+    letter-spacing: 0em;
+    margin-bottom: 40px;
+  }
+
+  .testimonialName {
+    font-size: 14px;
+  }
+
+  .testimonialNav {
+    margin-top: 80px;
+  }
+
   .finalSection {
-    padding: 0 20px;
+    padding: 100px 20px 0px;
   }
 
   .nav {
@@ -972,8 +1000,32 @@
     grid-template-columns: 1fr;
   }
 
+  .whoDescription {
+    display: block; /* Show on mobile */
+    font-family: "Poppins", "Poppins Placeholder", sans-serif;
+    color: #e4e4e7;
+    font-size: 14px;
+    margin-bottom: 80px;
+    text-align: center;
+    letter-spacing: 0em;
+    line-height: 1.8em;
+    font-weight: 400;
+  }
+
   .whoGrid {
     grid-template-columns: 1fr; /* one team member card per row on mobile */
+  }
+
+  .whoMeta {
+    margin: 20px 0;
+  }
+
+  .whoCard {
+    gap: 0px;
+  }
+
+  .whoName {
+    font-size: 20px;
   }
 
   .footerTop {

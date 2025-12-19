@@ -658,7 +658,7 @@
   margin-bottom: 40px;
   position: sticky;
   top: 80px;           /* stays visible while cards stack below */
-  z-index: 3;
+  z-index: 10;         /* higher than all cards to stay on top */
   background-color: #000; /* match page background so text sits on solid black */
   padding-bottom: 16px;
 }
@@ -690,22 +690,46 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 0; /* no gap so cards stack directly on top of each other */
+  padding-top: 100px; /* space before first card so content is visible when it becomes sticky */
   padding-bottom: 120px; /* extra scroll space so last card can pin */
 }
 
 .serviceCard {
   position: sticky;
-  top: 160px;
-  padding: 40px 0px 56px; /* a bit taller for more breathing room */
+  top: 300px; /* border will align at this sticky point */
+  padding: 0;
+  padding-bottom: 56px;
   border-radius: 0;
-  border-top: 1px solid rgba(148, 163, 184, 0.7); /* line only at the top */
+  border-top: 1px solid rgba(244, 246, 247, 0.7); /* border at top - aligns with sticky point */
   border-right: none;
   border-bottom: none;
   border-left: none;
   background-color: #000; /* keep solid black so previous content doesn't show through */
   box-shadow: none;
-  z-index: 1;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+.serviceCard:nth-child(1) {
+  z-index: 1; /* first card at bottom of stack */
+  margin-top: 0; /* ensure first card has proper spacing */
+}
+
+.serviceCard:nth-child(2) {
+  z-index: 2; /* second card above first */
+}
+
+.serviceCard:nth-child(3) {
+  z-index: 3; /* third card above second */
+}
+
+.serviceCard:nth-child(4) {
+  z-index: 4; /* last card (Cloud) on top of stack */
+}
+
+.serviceCard.faded {
+  opacity: 0.4;
 }
 
 .serviceCardLabel {
@@ -724,6 +748,7 @@
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.16em;
+  padding-top: 48px; /* increased padding so full content including "HUMAN" label is fully visible below border */
 }
 
 .serviceCardColumns ul {
@@ -775,7 +800,7 @@
 
 .whoPhoto {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 2.9 / 3;
   background-color: #f5f5f5;
   background-size: cover;
   background-position: center;
@@ -839,6 +864,22 @@
   text-align: left;
 }
 
+.testimonialSlider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.testimonialTrack {
+  display: flex;
+  width: 100%;
+}
+
+.testimonialSlide {
+  min-width: 100%;
+  width: 100%;
+  flex-shrink: 0;
+}
+
 .testimonialQuote {
   font-size: 18px;
   line-height: 1.8em;
@@ -847,6 +888,28 @@
   font-weight: 400;
   margin-bottom: 32px;
   letter-spacing: 0em;
+}
+.testimonialAuthorRow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.testimonialAvatar {
+  flex-shrink: 0;
+}
+
+.testimonialAvatar img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(148, 163, 184, 0.3);
+}
+
+.testimonialAuthorInfo {
+  display: flex;
+  flex-direction: column;
 }
 
 .testimonialName {
@@ -858,6 +921,7 @@
   color: #e5e7eb;
   letter-spacing: 0em;
   margin-bottom: 10px;
+  margin-top: 0;
 }
 
 .testimonialRole {
@@ -869,6 +933,7 @@
   color: #71717a;
   letter-spacing: 0.05em;
   margin-top: 0px;
+  margin-bottom: 0;
 }
 
 .testimonialNav {
@@ -1037,6 +1102,20 @@
     align-items: flex-start;
   }
 
+  .servicesSection {
+    padding: 60px 40px 64px;
+  }
+
+  .serviceCard {
+    top: 220px; /* adjust for tablet */
+  }
+
+  .serviceCardColumns {
+    grid-template-columns: minmax(0, 0.6fr) minmax(0, 1fr) minmax(0, 1fr);
+    gap: 24px;
+    font-size: 11px;
+  }
+
   .worksGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1116,7 +1195,9 @@
     top: 56px;              /* stick just below fixed mobile header */
     margin-inline: 0;
     margin-top: 0;
-    margin-bottom: 32px;
+    padding-bottom: 32px;
+    /* margin-bottom: 32px; */
+    margin-bottom: 0px;
     height: 100vh;
     min-height: 0;
     overflow: hidden;
@@ -1193,6 +1274,43 @@
 
   .whoGrid {
     grid-template-columns: 1fr; /* one team member card per row on mobile */
+    padding: 0 20px;
+  }
+
+  .servicesSection {
+    padding: 40px 20px 64px;
+  }
+
+  .servicesTitleRow {
+    top: 56px; /* adjust for mobile header */
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+  }
+
+  .serviceStack {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+
+  .serviceCard {
+    top: 180px; /* adjust sticky position for mobile */
+    padding-bottom: 40px;
+  }
+
+  .serviceCardLabel {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .serviceCardColumns {
+    grid-template-columns: 1fr; /* single column on mobile */
+    gap: 24px;
+    padding-top: 32px;
+    font-size: 11px;
+  }
+
+  .serviceCardColumns ul {
+    gap: 8px;
   }
 
   .whoMeta {
@@ -1201,6 +1319,11 @@
 
   .whoCard {
     gap: 0px;
+  }
+
+  .whoPhoto {
+    aspect-ratio: 2.8 / 3;
+    border-radius: 4px;
   }
 
   .whoName {

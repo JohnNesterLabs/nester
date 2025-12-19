@@ -19,21 +19,31 @@ const fadeIn = {
 const testimonials = [
   {
     quote:
-      "Pure Visuals has an incredible eye for detail. Their ability to translate abstract ideas into stunning visuals is unmatched.",
-    name: "Emma Reynolds",
-    role: "Creative Director — Visionary Agency"
+      "From the initial consultation to the final implementation, Nesterlabs demonstrated exceptional thought leadership and development skills.",
+    name: "Amit Utkarsh Sinha",
+    role: "CEO - Basepair",
+    avatar: "/testimonial/t3.jpeg"
   },
   {
     quote:
-      "Working with Pure Visuals was a seamless experience. Their team is professional, creative, and truly understands how to bring a brand’s vision to life.",
-    name: "Liam Carter",
-    role: "Founder — Carter & Co. Photography"
+      "Nesterlabs foresaw the rise of agentic AI and convinced us to look in that direction. Their strategic insight and precise execution put us ahead of the competition.",
+    name: "Abhijit Das",
+    role: "Founder, CTO - The Coupon Bureau",
+    avatar: "/testimonial/t2.jpeg"
   },
   {
     quote:
-      "From concept to execution, Pure Visuals delivered beyond what we imagined. The visuals they created for our campaign drove meaningful engagement.",
-    name: "Sophia Nguyen",
-    role: "Marketing Lead — Elevate Studios"
+      "Our platform is now a hundred times better because of the UX vision plus product development expertise of the Nesterlabs team.",
+    name: "Ratandeep Bhattacharjee",
+    role: "Director, Product Management - GoogleEx-Slack, Oracle",
+    avatar: "/testimonial/t4.jpeg"
+  },
+  {
+    quote:
+      "Nesterlabs helped us strategize, envision and build our MVP. A true sense of partnership emerged on this journey, as I could see them caring as much about the idea as we did.",
+    name: "Ambrish Tyagi",
+    role: "CEO - Banky",
+    avatar: "/testimonial/t1.jpeg"
   }
 ];
 
@@ -48,6 +58,7 @@ const heroBackgrounds = [
 export default function Home() {
   const heroRef = useRef<HTMLDivElement | null>(null);
   const worksRef = useRef<HTMLElement | null>(null);
+  const serviceStackRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"]
@@ -68,8 +79,17 @@ export default function Home() {
   // Random background cycling for left / right hero images
   const [leftIndex, setLeftIndex] = useState(0);
   const [rightIndex, setRightIndex] = useState(1);
-  const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const [testimonialIndex, setTestimonialIndex] = useState(1); // Start at 1 for infinite loop
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const [headerVariant, setHeaderVariant] = useState<"light" | "dark">("light");
+  const trackRef = useRef<HTMLDivElement>(null);
+  
+  // Create extended testimonials array for infinite loop: [last, ...all, first]
+  const extendedTestimonials = [
+    testimonials[testimonials.length - 1],
+    ...testimonials,
+    testimonials[0]
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -89,6 +109,94 @@ export default function Home() {
       setHeaderVariant("light");
     }
   });
+
+  // Handle service card stacking with fade effect
+  useEffect(() => {
+    const serviceStack = serviceStackRef.current;
+    if (!serviceStack) return;
+
+    const cards = Array.from(serviceStack.children) as HTMLElement[];
+    if (cards.length === 0) return;
+
+    const handleScroll = () => {
+      // Responsive sticky position based on screen size
+      const isMobile = window.innerWidth <= 640;
+      const isTablet = window.innerWidth <= 1024 && window.innerWidth > 640;
+      const stickyTop = isMobile ? 180 : isTablet ? 220 : 300; // matches CSS top values
+
+      cards.forEach((card, index) => {
+        const cardRect = card.getBoundingClientRect();
+        
+        // Check if this card is currently sticky (at the sticky position)
+        const isSticky = cardRect.top <= stickyTop && cardRect.bottom > stickyTop;
+        
+        // Get the next card
+        const nextCard = cards[index + 1];
+
+        // Remove faded class from all cards first
+        card.classList.remove('faded');
+        
+        // If this card is sticky and next card exists, fade the next card
+        if (isSticky && nextCard) {
+          const nextCardRect = nextCard.getBoundingClientRect();
+          // Fade the next card if it's approaching the sticky position
+          if (nextCardRect.top > stickyTop) {
+            nextCard.classList.add('faded');
+          }
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  // Handle infinite loop for testimonials
+  useEffect(() => {
+    // Reset position after animation completes when at boundaries
+    if (testimonialIndex === 0 && isTransitioning) {
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+        // Use requestAnimationFrame to ensure instant reset
+        requestAnimationFrame(() => {
+          setTestimonialIndex(extendedTestimonials.length - 2);
+        });
+      }, 600);
+      return () => clearTimeout(timer);
+    }
+    if (testimonialIndex === extendedTestimonials.length - 1 && isTransitioning) {
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+        // Use requestAnimationFrame to ensure instant reset
+        requestAnimationFrame(() => {
+          setTestimonialIndex(1);
+        });
+      }, 600);
+      return () => clearTimeout(timer);
+    }
+    if (isTransitioning && testimonialIndex > 0 && testimonialIndex < extendedTestimonials.length - 1) {
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+      }, 600);
+      return () => clearTimeout(timer);
+    }
+  }, [testimonialIndex, extendedTestimonials.length, isTransitioning]);
+
+  const handleNext = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setTestimonialIndex((prev) => prev + 1);
+  };
+
+  const handlePrev = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setTestimonialIndex((prev) => prev - 1);
+  };
 
   return (
     <main className={styles.main}>
@@ -177,7 +285,7 @@ export default function Home() {
         </div>
         <div className={styles.servicesDivider} />
 
-        <div className={styles.serviceStack}>
+        <div ref={serviceStackRef} className={styles.serviceStack}>
           <div className={styles.serviceCard}>
             <div className={styles.serviceCardColumns}>
               <div className={styles.serviceCardLabel}>Human</div>
@@ -314,37 +422,47 @@ export default function Home() {
         </div>
 
         <div className={styles.testimonialBody}>
-          <p className={styles.testimonialQuote}>
-            &quot;{testimonials[testimonialIndex].quote}&quot;
-          </p>
-          <p className={styles.testimonialName}>
-            {testimonials[testimonialIndex].name}
-          </p>
-          <p className={styles.testimonialRole}>
-            {testimonials[testimonialIndex].role}
-          </p>
+        <div className={styles.testimonialSlider}>
+            <motion.div
+              ref={trackRef}
+              className={styles.testimonialTrack}
+              animate={{
+                x: `-${testimonialIndex * 100}%`
+              }}
+              transition={{
+                type: "tween",
+                duration: isTransitioning ? 0.6 : 0,
+                ease: [0.25, 0.1, 0.25, 1]
+              }}
+            >
+              {extendedTestimonials.map((testimonial, index) => (
+                <div key={index} className={styles.testimonialSlide}>
+                  <p className={styles.testimonialQuote}>
+                    &quot;{testimonial.quote}&quot;
+                  </p>
+                  <p className={styles.testimonialName}>
+                    {testimonial.name}
+                  </p>
+                  <p className={styles.testimonialRole}>
+                    {testimonial.role}
+                  </p>
+                </div>
+              ))}
+            </motion.div>
+          </div>
 
           <div className={styles.testimonialNav}>
             <button
               type="button"
               aria-label="Previous testimonial"
-              onClick={() =>
-                setTestimonialIndex(
-                  (testimonialIndex - 1 + testimonials.length) %
-                    testimonials.length
-                )
-              }
+              onClick={handlePrev}
             >
               ‹
             </button>
             <button
               type="button"
               aria-label="Next testimonial"
-              onClick={() =>
-                setTestimonialIndex(
-                  (testimonialIndex + 1) % testimonials.length
-                )
-              }
+              onClick={handleNext}
             >
               ›
             </button>

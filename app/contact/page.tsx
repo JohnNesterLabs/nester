@@ -1,13 +1,21 @@
 "use client";
 
+import { useState } from "react";
 import styles from "../page.module.css";
 import contactStyles from "./contact.module.css";
 import SiteHeader from "../components/SiteHeader";
-import SiteFooter from "../components/SiteFooter";
+import Loader from "../components/Loader";
 
 export default function ContactPage() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleIframeLoad = () => {
+    setIsLoading(false);
+  };
+
   return (
     <main className={styles.main}>
+      {isLoading && <Loader />}
       <SiteHeader variant="dark" />
       
       <section className={contactStyles.contactSection}>
@@ -54,13 +62,12 @@ export default function ContactPage() {
                 marginWidth={0}
                 title="Contact Form"
                 className={contactStyles.tallyEmbed}
+                onLoad={handleIframeLoad}
               />
             </div>
           </div>
         </div>
       </section>
-
-      <SiteFooter />
     </main>
   );
 }

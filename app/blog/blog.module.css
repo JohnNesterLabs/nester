@@ -15,10 +15,11 @@
   
   .blogTitle {
     font-family: "JetBrains Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    font-size: 72px;
+    font-size: 40px;
     letter-spacing: 0em;
     text-transform: uppercase;
     line-height: 1.2em;
+    padding-top: 100px;
   }
   
   .blogSubtitle {
@@ -43,14 +44,12 @@
   .mediumGrid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
+    gap: 60px;
   }
   
   .mediumCard {
     border-radius: 18px;
     overflow: hidden;
-    background: #020617;
-    border: 1px solid rgba(39, 39, 42, 0.9);
     display: flex;
     flex-direction: column;
   }
@@ -70,38 +69,45 @@
   }
   
   .mediumCardDate {
-    font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono",
-      "Courier New", monospace;
-    font-size: 11px;
-    letter-spacing: 0.16em;
+    font-family: "JetBrains Mono", "JetBrains Mono Placeholder", sans-serif;
+    font-size: 16px;
+    letter-spacing: 0em;
     text-transform: uppercase;
-    color: #f97316;
+    color: #e4e4e7;
   }
   
   .mediumCardTitle {
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 22px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #e4e4e7;
   }
   
   .mediumCardAuthor {
-    font-size: 13px;
-    color: #a1a1aa;
+    font-size: 16px;
+    color: #e4e4e7;
+    text-transform: uppercase;
+    font-family: "JetBrains Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   }
   
   .mediumCardExcerpt {
     font-size: 14px;
-    color: #e5e7eb;
-    line-height: 1.6;
+    font-weight: 400;
+    color: #e4e4e7;
+    letter-spacing: 0em;
+    line-height: 1.8em;
+    font-family: "Poppins", "Poppins Placeholder", sans-serif;
   }
   
   .mediumCardLink {
     margin-top: auto;
     font-size: 14px;
-    font-weight: 500;
-    font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono",
-      "Courier New", monospace;
-    text-decoration: underline;
-    color: #f9fafb;
+    font-weight: 400;
+    letter-spacing: 0em;
+    line-height: 1.8em;
+    font-family: "Poppins", "Poppins Placeholder", sans-serif;
+    text-decoration: none;
+    color: #e4e4e7;
   }
   
   @media (max-width: 1024px) {
@@ -116,7 +122,32 @@
   
   @media (max-width: 640px) {
     .blogSection {
-      padding: 80px 16px 40px;
+      padding: 80px 20px 40px;
+    }
+
+    .blogTitle {
+      font-size: 28px;
+      padding-top: 0px;
+    }
+
+    .blogHeader {
+      margin-bottom: 100px;
+    }
+
+    .mediumCardBody {
+      padding: 0px;
+    }
+
+    .mediumCardDate {
+      font-size: 14px;
+    }
+
+    .mediumCardTitle {
+      font-size: 20px;
+    }
+
+    .mediumCardAuthor {
+      font-size: 14px;
     }
   
     .mediumGrid {

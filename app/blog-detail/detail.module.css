@@ -20,6 +20,38 @@
   margin: 0 auto;
 }
 
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #71717a;
+  font-size: 14px;
+  font-family: "JetBrains Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  text-decoration: none;
+  margin-bottom: 24px;
+  transition: color 0.2s ease;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.backLink:hover {
+  color: #e4e4e7;
+}
+
+.backArrow {
+  width: 14px;
+  height: 12px;
+  display: block;
+  transform: scaleX(-1);
+  filter: brightness(0) invert(0.45);
+  opacity: 1;
+  transition: filter 0.2s ease;
+}
+
+.backLink:hover .backArrow {
+  filter: brightness(0) invert(0.9);
+}
+
 .postTitle {
   font-size: 38px;
   line-height: 1.3;
@@ -98,6 +130,11 @@
 @media (max-width: 640px) {
   .articleSection {
     padding: 80px 16px 40px;
+  }
+
+  .backLink {
+    font-size: 12px;
+    margin-bottom: 20px;
   }
 
   .postTitle {

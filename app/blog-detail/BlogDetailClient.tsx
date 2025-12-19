@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 import detailStyles from "./detail.module.css";
 
 type FeedItem = {
@@ -150,6 +151,10 @@ export default function BlogDetailClient() {
   return (
     <section className={detailStyles.articleSection}>
       <article id="article-wrap" className={detailStyles.articleWrap}>
+        <Link href="/blog" className={detailStyles.backLink}>
+          <img src="/arrow.svg" alt="" className={detailStyles.backArrow} />
+          Back to Blog
+        </Link>
         <h1 className={detailStyles.postTitle}>{article.title}</h1>
         <div className={detailStyles.postMeta}>
           {article.author || ""} • {formatDate(article.pubDate)}

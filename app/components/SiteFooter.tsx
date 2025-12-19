@@ -1,10 +1,14 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import styles from "../page.module.css";
 
 export default function SiteFooter() {
+  const pathname = usePathname();
+  const isHomeOrBlog = pathname === "/";
+  
   return (
-    <footer className={styles.footer}>
+    <footer className={`${styles.footer} ${!isHomeOrBlog ? styles.footerWithPadding : ""}`}>
       <div className={styles.footerTop}>
         <div>
           <p className={styles.footerLabel}>About</p>

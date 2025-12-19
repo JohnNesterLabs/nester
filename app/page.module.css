@@ -1096,6 +1096,10 @@
   font-size: 13px;
 }
 
+.footerWithPadding {
+  padding: 0 60px;
+}
+
 .footerTop {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr)); /* 3 columns + copyright column */
@@ -1481,6 +1485,10 @@
     grid-column: 2;
     grid-row: 2;
     justify-content: start;
+  }
+
+  .footerWithPadding {
+    padding: 0 20px;
   }
 }
 

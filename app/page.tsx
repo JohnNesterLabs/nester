@@ -453,12 +453,22 @@ export default function Home() {
                   <p className={styles.testimonialQuote}>
                     &quot;{testimonial.quote}&quot;
                   </p>
-                  <p className={styles.testimonialName}>
-                    {testimonial.name}
-                  </p>
-                  <p className={styles.testimonialRole}>
-                    {testimonial.role}
-                  </p>
+                  <div className={styles.testimonialAuthorRow}>
+                    <div className={styles.testimonialAvatar}>
+                      <img
+                        src={testimonial.avatar}
+                        alt={testimonial.name}
+                      />
+                    </div>
+                    <div className={styles.testimonialAuthorInfo}>
+                      <p className={styles.testimonialName}>
+                        {testimonial.name}
+                      </p>
+                      <p className={styles.testimonialRole}>
+                        {testimonial.role}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </motion.div>

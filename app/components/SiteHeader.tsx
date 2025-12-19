@@ -41,7 +41,7 @@ export default function SiteHeader({ variant = "light", isHeroTextAtTop = false 
         </div>
         <nav className={styles.nav}>
           <Link href="/#works">Work</Link>
-          <Link href="/#about">About Us</Link>
+          <Link href="/about">About Us</Link>
           <Link href="/blog">Blogs</Link>
           {/* <Link href="https://nesteraibot.web.app/" target="_blank" rel="noopener noreferrer">NesterAI</Link> */}
         </nav>
@@ -78,7 +78,7 @@ export default function SiteHeader({ variant = "light", isHeroTextAtTop = false 
             </div>
             <div className={styles.mobileMenuItems}>
               <Link href="/#works" onClick={closeMenu}>Work</Link>
-              <Link href="/#about" onClick={closeMenu}>About Us</Link>
+              <Link href="/about" onClick={closeMenu}>About Us</Link>
               <Link href="/blog" onClick={closeMenu}>Blogs</Link>
               {/* <Link href="https://nesteraibot.web.app/" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>Nester AI</Link> */}
               <Link href="/contact" className={styles.mobileMenuCta} onClick={closeMenu}>Let&apos;s Talk</Link>

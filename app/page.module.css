@@ -27,6 +27,8 @@
   height: 60px;
   padding: 0 100px;
   backdrop-filter: blur(18px);
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .headerDark {
@@ -369,6 +371,8 @@
 
 .section {
   padding: 36px 60px;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .sectionHeader {
@@ -508,6 +512,8 @@
 
 .worksPageSection {
   padding: 112px 60px 64px;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .workDetailSection {
@@ -740,6 +746,8 @@
 .servicesSection {
   padding: 80px 60px 64px;
   position: relative; /* so sticky children reference this section */
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .servicesTitleRow {
@@ -855,6 +863,8 @@
 
 .whoSection {
   padding: 80px 60px 56px;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .whoTitleRow {
@@ -921,6 +931,8 @@
 
 .testimonialSection {
   padding: 80px 0 72px;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .testimonialTitleRow {
@@ -1050,6 +1062,8 @@
 .finalSection {
   padding: 96px 60px 0px;
   background-color: #000;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .finalCtaRow {

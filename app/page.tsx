@@ -592,40 +592,5 @@ export default function Home() {
   );
 }
 
-function WorkCard({ title, tag }: { title: string; tag: string }) {
-  return (
-    <motion.article
-      className={styles.workCard}
-      whileHover={{ y: -8, scale: 1.02 }}
-      transition={{ type: "spring", stiffness: 260, damping: 20 }}
-    >
-      <div className={styles.workMedia} />
-      <div className={styles.workMeta}>
-        <div>
-          <p className={styles.workTag}>{tag}</p>
-          <h3 className={styles.workTitle}>{title}</h3>
-        </div>
-        <span className={styles.workArrow}>↗</span>
-      </div>
-    </motion.article>
-  );
-}
-
-function ServiceColumn({ title, items }: { title: string; items: string[] }) {
-  return (
-    <motion.div
-      className={styles.serviceColumn}
-      whileHover={{ y: -6 }}
-      transition={{ type: "spring", stiffness: 200, damping: 18 }}
-    >
-      <h3>{title}</h3>
-      <ul>
-        {items.map((item) => (
-          <li key={item}>{item}</li>
-        ))}
-      </ul>
-    </motion.div>
-  );
-}
 
 

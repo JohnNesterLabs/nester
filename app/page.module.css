@@ -897,6 +897,10 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
 }
 
 .whoPhoto {

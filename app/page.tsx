@@ -451,7 +451,12 @@ export default function Home() {
           Our founders collectively bring more than 85 years of expertise in helping businesses integrate advanced technologies and optimise their existing product experiences.
         </p>
         <div className={styles.whoGrid}>
-          <div className={styles.whoCard}>
+          <a
+            href="https://www.linkedin.com/in/richhariya/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.whoCard}
+          >
             <div
               className={styles.whoPhoto}
               style={{ backgroundImage: "url('/images/About/Frame 311.jpg')" }}
@@ -460,8 +465,13 @@ export default function Home() {
               <p className={styles.whoName}>Ankur Richhariya</p>
               <p className={styles.whoRole}>Product</p>
             </div>
-          </div>
-          <div className={styles.whoCard}>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/kunalshrivastava89/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.whoCard}
+          >
             <div
               className={styles.whoPhoto}
               style={{ backgroundImage: "url('/images/About/Frame 312.jpg')" }}
@@ -470,8 +480,13 @@ export default function Home() {
               <p className={styles.whoName}>Kunal Shrivastava</p>
               <p className={styles.whoRole}>Technology</p>
             </div>
-          </div>
-          <div className={styles.whoCard}>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/shreymalik/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.whoCard}
+          >
             <div
               className={styles.whoPhoto}
               style={{ backgroundImage: "url('/images/About/Frame 314.jpg')" }}
@@ -480,8 +495,13 @@ export default function Home() {
               <p className={styles.whoName}>Shrey Malik</p>
               <p className={styles.whoRole}>Design</p>
             </div>
-          </div>
-          <div className={styles.whoCard}>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/gaurav19/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.whoCard}
+          >
             <div
               className={styles.whoPhoto}
               style={{ backgroundImage: "url('/images/About/Frame 313.jpg')" }}
@@ -490,7 +510,7 @@ export default function Home() {
               <p className={styles.whoName}>Gaurav Gupta</p>
               <p className={styles.whoRole}>Information</p>
             </div>
-          </div>
+          </a>
         </div>
       </motion.section>
 

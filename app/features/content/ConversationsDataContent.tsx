@@ -1,18 +1,20 @@
+import styles from "../../page.module.css";
+
 export default function ConversationsDataContent() {
     return (
       <>
-      <h2>Architecting the Future of Conversational Data Access</h2>
-        <p>The Natural Conversational Data System is a cutting-edge AI solution that eliminates reliance on specialised query languages, making complex database interaction conversational, secure, and intuitive for enterprise data access. </p>
+      <h2 className={styles.workDetailQuote}>Architecting the Future of Conversational Data Access</h2>
+        <p className={styles.workDetailParagraph}>The Natural Conversational Data System is a cutting-edge AI solution that eliminates reliance on specialised query languages, making complex database interaction conversational, secure, and intuitive for enterprise data access. </p>
         
-        <h3>The Challenge: The Data Accessibility Bottleneck</h3>
-        <p>Data access was slow and centralised, requiring technical teams to manually write complex MongoDB queries for every ad-hoc report. We designed an autonomous system that interprets natural language and securely executes those commands to democratize data retrieval. </p>
+        <h3 className={styles.workDetailSubheading}>The Challenge: The Data Accessibility Bottleneck</h3>
+        <p className={styles.workDetailParagraph}>Data access was slow and centralised, requiring technical teams to manually write complex MongoDB queries for every ad-hoc report. We designed an autonomous system that interprets natural language and securely executes those commands to democratize data retrieval. </p>
       
-        <h3>The Solution: Multi-Agent Orchestration with CrewAI</h3>
-        <p>We utilized CrewAI to orchestrate a team of specialised AI agents, moving beyond monolithic LLM models. This ensures high-precision task execution, from interpreting user intent to generating and validating the final database query. </p>
+        <h3 className={styles.workDetailSubheading}>The Solution: Multi-Agent Orchestration with CrewAI</h3>
+        <p className={styles.workDetailParagraph}>We utilized CrewAI to orchestrate a team of specialised AI agents, moving beyond monolithic LLM models. This ensures high-precision task execution, from interpreting user intent to generating and validating the final database query. </p>
     
         <img src="/cdata/c1.avif" alt="cdata visuals frame 1" />
-        <h3>Core Technical Highlights: An Enterprise-Grade Agentic Architecture</h3>
-        <p> The system's complexity lies in the orchestration of advanced AI models with rigorous data management protocols. This approach ensures not only accurate interpretation but also reliable, secure execution in a production environment. </p>
+        <h3 className={styles.workDetailSubheading}>Core Technical Highlights: An Enterprise-Grade Agentic Architecture</h3>
+        <p className={styles.workDetailParagraph}> The system's complexity lies in the orchestration of advanced AI models with rigorous data management protocols. This approach ensures not only accurate interpretation but also reliable, secure execution in a production environment. </p>
         
         <ul>
           <li>
@@ -78,12 +80,10 @@ export default function ConversationsDataContent() {
             </ul>
           </li>
         </ul>
-        <h3>Impact and Outcome</h3>
-        <p>The system allows non-technical users to generate complex reports and visualizations instantly using natural language. This enhancement frees engineering teams from repetitive requests and elevates data security through its mandated validation layer.</p>
+        <h3 className={styles.workDetailSubheading}>Impact and Outcome</h3>
+        <p className={styles.workDetailParagraph}>The system allows non-technical users to generate complex reports and visualizations instantly using natural language. This enhancement frees engineering teams from repetitive requests and elevates data security through its mandated validation layer.</p>
         
       </>
     );
   }
-  
-
   

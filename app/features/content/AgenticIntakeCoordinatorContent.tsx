@@ -1,8 +1,10 @@
+import styles from "../../page.module.css";
+
 export default function AgenticIntakeCoordinatorContent() {
     return (
       <>
-        <h2>"Conversational Data Assistant"</h2>
-        <p>
+        <h2 className={styles.workDetailQuote}>"Conversational Data Assistant"</h2>
+        <p className={styles.workDetailParagraph}>
           This project involved designing and deploying a sophisticated, voice-based intake
           coordinator system for a major digital health platform. The system acts as a
           comprehensive virtual assistant, capable of handling appointment bookings, updates,
@@ -10,15 +12,15 @@ export default function AgenticIntakeCoordinatorContent() {
           empathetic manner.
         </p>
   
-        <p>
+        <p className={styles.workDetailParagraph}>
           <strong>Key Achievement:</strong> The system reduced form abandonment by{" "}
           <strong>60–80%</strong> through a guided, conversational flow, offering 24/7
           availability and enhanced accessibility across multi‑channels (web audio and phone
           calls via Twilio).
         </p>
   
-        <h3>Core Innovation: The Real-Time Voice Pipeline</h3>
-        <p>
+        <h3 className={styles.workDetailSubheading}>Core Innovation: The Real-Time Voice Pipeline</h3>
+        <p className={styles.workDetailParagraph}>
           The architecture is centered around maintaining sub‑second latency and absolute
           reliability, critical standards for a healthcare application.
         </p>
@@ -37,15 +39,15 @@ export default function AgenticIntakeCoordinatorContent() {
           </li>
         </ul>
   
-        <h3>Layered Architecture for Security and Reliability</h3>
-        <p>
+        <h3 className={styles.workDetailSubheading}>Layered Architecture for Security and Reliability</h3>
+        <p className={styles.workDetailParagraph}>
           The system operates on a four‑layered, modular architecture built for scalability and
           strict separation of concerns, ensuring maintainability and easy auditing for
           compliance.
         </p>
         <img src="/banky/b4.png" alt="Agentic Intake Coordinator visuals frame 1" />
   
-        <h3>Enterprise-Grade Technical Highlights</h3>
+        <h3 className={styles.workDetailSubheading}>Enterprise-Grade Technical Highlights</h3>
         <ul>
           <li>
             <strong>Professional Guardrails Framework:</strong> Implements strict,

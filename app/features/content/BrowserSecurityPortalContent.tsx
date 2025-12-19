@@ -1,15 +1,17 @@
+import styles from "../../page.module.css";
+
 export default function BrowserSecurityPortalContent() {
     return (
       <>
-        <h2>Browser-based Threat Detection and Response, Reimagined</h2>
-        <h3>Overview</h3>
-        <p>SquareX is a pioneering Browser Detection and Response (BDR) platform that empowers enterprises to detect, prevent, and respond to web-based threats in real time. Combining advanced features like disposable browser isolation, granular data loss prevention (DLP), extension hijack detection, and GenAI misuse protection, SquareX delivers a unique layer of security directly at the browser level. </p>
+        <h2 className={styles.workDetailQuote}>Browser-based Threat Detection and Response, Reimagined</h2>
+        <h3 className={styles.workDetailSubheading}>Overview</h3>
+        <p className={styles.workDetailParagraph}>SquareX is a pioneering Browser Detection and Response (BDR) platform that empowers enterprises to detect, prevent, and respond to web-based threats in real time. Combining advanced features like disposable browser isolation, granular data loss prevention (DLP), extension hijack detection, and GenAI misuse protection, SquareX delivers a unique layer of security directly at the browser level. </p>
   
-        <p>However, as with many technically sophisticated security tools, the challenge was not in capability but in ensuring those capabilities were easily accessible, understandable, and actionable for diverse enterprise roles, from Chief Security Officers to IT administrators. </p>
+        <p className={styles.workDetailParagraph}>However, as with many technically sophisticated security tools, the challenge was not in capability but in ensuring those capabilities were easily accessible, understandable, and actionable for diverse enterprise roles, from Chief Security Officers to IT administrators. </p>
         
         
-        <h3>The challenge</h3>
-        <p>
+        <h3 className={styles.workDetailSubheading}>The challenge</h3>
+        <p className={styles.workDetailParagraph}>
           Despite strong technical differentiation, the UX audit revealed several barriers that
           slowed adoption and reduced day-to-day efficiency:
         </p>
@@ -40,28 +42,28 @@ export default function BrowserSecurityPortalContent() {
           </li>
         </ul>
   
-        <p>
+        <p className={styles.workDetailParagraph}>
           For a security product where response speed and clarity can directly impact an
-          organization’s protection, these usability issues represented a serious risk to
+          organization's protection, these usability issues represented a serious risk to
           adoption, trust and long-term customer satisfaction.
         </p>
         <img src="/browserSecurity/s1.avif" alt="browser visuals frame 1" />
-        <h3>The solution</h3>
-        <p>The redesign initiative, led by NesterLabs, combined UX strategy, information architecture overhaul and new visual design concepts . The approach was structured around three guiding policies: </p>
+        <h3 className={styles.workDetailSubheading}>The solution</h3>
+        <p className={styles.workDetailParagraph}>The redesign initiative, led by NesterLabs, combined UX strategy, information architecture overhaul and new visual design concepts . The approach was structured around three guiding policies: </p>
         <img src="/browserSecurity/s2.avif" alt="browser visuals frame 2" />
         
-         <h3>New visual direction</h3>
-         <p>
+         <h3 className={styles.workDetailSubheading}>New visual direction</h3>
+         <p className={styles.workDetailParagraph}>
            SquareX goes beyond traditional cybersecurity by pioneering Browser Detection and
            Response; as the business scales to its next stage of growth, the product experience
            needs to match this evolution.
          </p>
-         <p>
+         <p className={styles.workDetailParagraph}>
            A visual design refresh is not merely cosmetic. For a company like SquareX, scaling
            rapidly and entering a new phase of growth, the user interface becomes a signal of
            progress and trust.
          </p>
-         <p>Key points we kept in mind while approaching the redesign:</p>
+         <p className={styles.workDetailParagraph}>Key points we kept in mind while approaching the redesign:</p>
          <ul>
            <li>Incorporating legacy brand elements</li>
            <li>Clarity first design approach</li>
@@ -69,13 +71,13 @@ export default function BrowserSecurityPortalContent() {
          </ul>
         
        
-        <h3>framed in light - The new visual design direction for SquareX product experience</h3>
-        <p>The design explores how data and information shape the product experience, expressed through elegant, frosted surfaces that feel rich with texture.
+        <h3 className={styles.workDetailSubheading}>framed in light - The new visual design direction for SquareX product experience</h3>
+        <p className={styles.workDetailParagraph}>The design explores how data and information shape the product experience, expressed through elegant, frosted surfaces that feel rich with texture.
         </p>
-        <p>Depth and hierarchy are created by layering gradients, subtle textures, and light play, optimising brightness and softness for each element. This approach delivers a refined, modern aesthetic where clarity and elevation guide the user’s focus.
+        <p className={styles.workDetailParagraph}>Depth and hierarchy are created by layering gradients, subtle textures, and light play, optimising brightness and softness for each element. This approach delivers a refined, modern aesthetic where clarity and elevation guide the user's focus.
         </p>
         <img src="/browserSecurity/s3.avif" alt="browser visuals frame 3" />
-        <h3>Key interventions</h3>
+        <h3 className={styles.workDetailSubheading}>Key interventions</h3>
         <ul>
           <li>
             <strong>Task-based Information Architecture:</strong> Replacing object-only navigation
@@ -93,8 +95,8 @@ export default function BrowserSecurityPortalContent() {
           </li>
           <li>
             <strong>Consolidated dashboards with actionable insights:</strong> Highlighting urgent
-            security events, aggregated threat severity and recommended responses (“200
-            unauthorized extensions detected: create a block policy”).
+            security events, aggregated threat severity and recommended responses ("200
+            unauthorized extensions detected: create a block policy").
           </li>
           <li>
             <strong>Modular navigation framework:</strong> Narrower primary navigation,
@@ -104,12 +106,12 @@ export default function BrowserSecurityPortalContent() {
           <li>
             <strong>Visual design refresh:</strong> Three concepts explored, from dark mode
             data‑centric layouts to playful, brand‑forward UIs, balancing enterprise seriousness
-            with SquareX’s youthful identity.
+            with SquareX's youthful identity.
           </li>
         </ul>
   
-        <h3>The design impact</h3>
-        <p>
+        <h3 className={styles.workDetailSubheading}>The design impact</h3>
+        <p className={styles.workDetailParagraph}>
           While the redesigned product is yet to be rolled out, the overhaul is expected to
           significantly improve how enterprise users experience and operate SquareX. Guided
           onboarding flows and self‑service deployment reduce setup effort, while a task‑based
@@ -118,14 +120,14 @@ export default function BrowserSecurityPortalContent() {
           recommendations further shorten investigation‑to‑response cycles, improving
           day‑to‑day admin productivity.
         </p>
-        <p>
+        <p className={styles.workDetailParagraph}>
           These UX improvements are complimented by a clarity‑first visual direction that
           explores how data and information shape the product experience. Frosted, light‑framed
           surfaces introduce a calm, modern aesthetic, while layered gradients, subtle textures,
           and controlled use of light create depth and hierarchy. This balance of brightness and
           softness helps guide focus, reduce cognitive load and elevate important actions.
         </p>
-        <p>
+        <p className={styles.workDetailParagraph}>
           Together, the redesign positions SquareX as a security platform that feels both
           powerful and approachable – one that speaks the language of its users and enables
           faster, more confident decision‑making with fewer dependencies on external support.
@@ -135,6 +137,4 @@ export default function BrowserSecurityPortalContent() {
       </>
     );
   }
-  
-
   

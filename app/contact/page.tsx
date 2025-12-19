@@ -11,9 +11,9 @@ export default function ContactPage() {
       <SiteHeader variant="dark" />
       
       <section className={contactStyles.contactSection}>
+        <h1 className={contactStyles.contactTitle}>Let&apos;s Talk</h1>
         <div className={contactStyles.contactContainer}>
           <div className={contactStyles.contactInfo}>
-            <h1 className={contactStyles.contactTitle}>Let&apos;s Talk</h1>
             
             <div className={contactStyles.contactItem}>
               <p className={contactStyles.contactLabel}>Send an email</p>
@@ -32,7 +32,13 @@ export default function ContactPage() {
             <div className={contactStyles.contactItem}>
               <p className={contactStyles.contactLabel}>Location</p>
               <p className={contactStyles.contactValue}>
-                701 LAKEWAY DR #200, SUNNYVALE CA 94085, USA
+                701 LAKEWAY DR #200,
+              </p>
+              <p className={contactStyles.contactValue}>
+                SUNNYVALE CA 94085 ,
+              </p>
+              <p className={contactStyles.contactValue}>
+                USA
               </p>
             </div>
           </div>

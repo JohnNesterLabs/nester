@@ -1,5 +1,5 @@
 .contactSection {
-  padding: 120px 40px 80px;
+  padding: 200px 40px 120px;
   max-width: 1320px;
   margin: 0 auto;
 }
@@ -15,11 +15,12 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  margin-top: 50px;
 }
 
 .contactTitle {
   font-family: "JetBrains Mono", "JetBrains Mono Placeholder", sans-serif;
-  font-size: 72px;
+  font-size: 40px;
   font-weight: 400;
   letter-spacing: 0;
   line-height: 1.2;
@@ -31,10 +32,10 @@
 .contactItem {
   display: flex;
   flex-direction: column;
-  gap: 8px;
 }
 
 .contactLabel {
+  margin-bottom: 12px !important;
   font-family: "Poppins", "Poppins Placeholder", sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -46,11 +47,11 @@
 
 .contactValue {
   font-family: "JetBrains Mono", "JetBrains Mono Placeholder", sans-serif;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 400;
   color: #e4e4e7;
   text-decoration: none;
-  letter-spacing: 0.05em;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
   margin: 0;
 }

@@ -773,6 +773,28 @@
   margin-bottom: 32px;
   letter-spacing: 0em;
 }
+.testimonialAuthorRow {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.testimonialAvatar {
+  flex-shrink: 0;
+}
+
+.testimonialAvatar img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(148, 163, 184, 0.3);
+}
+
+.testimonialAuthorInfo {
+  display: flex;
+  flex-direction: column;
+}
 
 .testimonialName {
   font-family: "JetBrains Mono", ui-monospace, Menlo, Monaco, Consolas,
@@ -783,6 +805,7 @@
   color: #e5e7eb;
   letter-spacing: 0em;
   margin-bottom: 10px;
+  margin-top: 0;
 }
 
 .testimonialRole {
@@ -794,6 +817,7 @@
   color: #71717a;
   letter-spacing: 0.05em;
   margin-top: 0px;
+  margin-bottom: 0;
 }
 
 .testimonialNav {

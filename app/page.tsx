@@ -19,21 +19,31 @@ const fadeIn = {
 const testimonials = [
   {
     quote:
-      "Pure Visuals has an incredible eye for detail. Their ability to translate abstract ideas into stunning visuals is unmatched.",
-    name: "Emma Reynolds",
-    role: "Creative Director — Visionary Agency"
+      "From the initial consultation to the final implementation, Nesterlabs demonstrated exceptional thought leadership and development skills.",
+    name: "Amit Utkarsh Sinha",
+    role: "CEO - Basepair",
+    avatar: "/testimonial/t3.jpeg"
   },
   {
     quote:
-      "Working with Pure Visuals was a seamless experience. Their team is professional, creative, and truly understands how to bring a brand’s vision to life.",
-    name: "Liam Carter",
-    role: "Founder — Carter & Co. Photography"
+      "Nesterlabs foresaw the rise of agentic AI and convinced us to look in that direction. Their strategic insight and precise execution put us ahead of the competition.",
+    name: "Abhijit Das",
+    role: "Founder, CTO - The Coupon Bureau",
+    avatar: "/testimonial/t2.jpeg"
   },
   {
     quote:
-      "From concept to execution, Pure Visuals delivered beyond what we imagined. The visuals they created for our campaign drove meaningful engagement.",
-    name: "Sophia Nguyen",
-    role: "Marketing Lead — Elevate Studios"
+      "Our platform is now a hundred times better because of the UX vision plus product development expertise of the Nesterlabs team.",
+    name: "Ratandeep Bhattacharjee",
+    role: "Director, Product Management - GoogleEx-Slack, Oracle",
+    avatar: "/testimonial/t4.jpeg"
+  },
+  {
+    quote:
+      "Nesterlabs helped us strategize, envision and build our MVP. A true sense of partnership emerged on this journey, as I could see them caring as much about the idea as we did.",
+    name: "Ambrish Tyagi",
+    role: "CEO - Banky",
+    avatar: "/testimonial/t1.jpeg"
   }
 ];
 
@@ -363,12 +373,22 @@ export default function Home() {
           <p className={styles.testimonialQuote}>
             &quot;{testimonials[testimonialIndex].quote}&quot;
           </p>
-          <p className={styles.testimonialName}>
-            {testimonials[testimonialIndex].name}
-          </p>
-          <p className={styles.testimonialRole}>
-            {testimonials[testimonialIndex].role}
-          </p>
+          <div className={styles.testimonialAuthorRow}>
+            <div className={styles.testimonialAvatar}>
+              <img
+                src={testimonials[testimonialIndex].avatar}
+                alt={testimonials[testimonialIndex].name}
+              />
+            </div>
+            <div className={styles.testimonialAuthorInfo}>
+              <p className={styles.testimonialName}>
+                {testimonials[testimonialIndex].name}
+              </p>
+              <p className={styles.testimonialRole}>
+                {testimonials[testimonialIndex].role}
+              </p>
+            </div>
+          </div>
 
           <div className={styles.testimonialNav}>
             <button

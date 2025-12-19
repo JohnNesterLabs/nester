@@ -58,6 +58,7 @@ const heroBackgrounds = [
 export default function Home() {
   const heroRef = useRef<HTMLDivElement | null>(null);
   const worksRef = useRef<HTMLElement | null>(null);
+  const heroOverlayRef = useRef<HTMLDivElement | null>(null);
   const serviceStackRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -65,6 +66,10 @@ export default function Home() {
   });
   const { scrollYProgress: worksYProgress } = useScroll({
     target: worksRef,
+    offset: ["start start", "start start"]
+  });
+  const { scrollYProgress: heroOverlayYProgress } = useScroll({
+    target: heroOverlayRef,
     offset: ["start start", "start start"]
   });
 
@@ -82,6 +87,7 @@ export default function Home() {
   const [testimonialIndex, setTestimonialIndex] = useState(1); // Start at 1 for infinite loop
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [headerVariant, setHeaderVariant] = useState<"light" | "dark">("light");
+  const [isHeroTextAtTop, setIsHeroTextAtTop] = useState(false);
   const trackRef = useRef<HTMLDivElement>(null);
   
   // Create extended testimonials array for infinite loop: [last, ...all, first]
@@ -107,6 +113,13 @@ export default function Home() {
       setHeaderVariant("dark");
     } else {
       setHeaderVariant("light");
+    }
+  });
+
+  // Track when hero text section reaches the top of viewport (for mobile header background)
+  useMotionValueEvent(heroOverlayYProgress, "change", (latest) => {
+    if (typeof window !== "undefined" && window.innerWidth <= 640) {
+      setIsHeroTextAtTop(latest >= 1);
     }
   });
 
@@ -201,7 +214,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       {/* Navbar */}
-      <SiteHeader variant={headerVariant} />
+      <SiteHeader variant={headerVariant} isHeroTextAtTop={isHeroTextAtTop} />
 
       {/* Hero – scroll-controlled split images pinned while next section comes up */}
       <section ref={heroRef} className={styles.heroSection}>
@@ -226,7 +239,7 @@ export default function Home() {
             />
           </motion.div>
 
-          <div className={styles.heroOverlay}>
+          <div ref={heroOverlayRef} className={styles.heroOverlay}>
             <motion.div
               className={styles.heroTitleBlock}
               style={{ y: textY, opacity: textOpacity }}

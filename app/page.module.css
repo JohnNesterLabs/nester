@@ -1030,6 +1030,15 @@
   .header {
     margin: 0;
     padding: 10px 16px;
+    background-color: white;
+  }
+
+  .headerDark {
+    background-color: white;
+  }
+
+  .headerHeroTextAtTop {
+    background-color: transparent !important;
   }
 
   .sectionHeaderCentered h2 {

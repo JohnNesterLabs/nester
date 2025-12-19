@@ -5,15 +5,16 @@ import styles from "../page.module.css";
 
 type SiteHeaderProps = {
   variant?: "light" | "dark";
+  isHeroTextAtTop?: boolean;
 };
 
-export default function SiteHeader({ variant = "light" }: SiteHeaderProps) {
+export default function SiteHeader({ variant = "light", isHeroTextAtTop = false }: SiteHeaderProps) {
   const isDark = variant === "dark";
   const logoSrc = isDark ? "/images/Logo White.svg" : "/images/Logo_web 1.svg";
 
   return (
     <header
-      className={`${styles.header} ${isDark ? styles.headerDark : ""}`}
+      className={`${styles.header} ${isDark ? styles.headerDark : ""} ${isHeroTextAtTop ? styles.headerHeroTextAtTop : ""}`}
     >
       <div className={styles.logo}>
         <Link href="/">

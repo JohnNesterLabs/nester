@@ -117,18 +117,126 @@
   display: block;
   width: 100%;
   height: 2px;
-  background-color: #f9fafb;
+  background-color: #000;
   border-radius: 999px;
+  transition: transform 0.3s ease, margin 0.3s ease;
 }
 
 .menuToggle span + span {
   margin-top: 6px;
 }
 
+.menuToggleOpen span:first-child {
+  transform: rotate(45deg) translate(8px, 8px);
+  margin-top: 0;
+}
+
+.menuToggleOpen span:last-child {
+  transform: rotate(-45deg) translate(8px, -8px);
+  margin-top: 0;
+}
+
+.mobileMenuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  display: flex;
+  background-color: white;
+  backdrop-filter: blur(4px);
+  flex-direction: column;
+  z-index: 101;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.mobileMenuHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.mobileMenuLogo {
+  display: flex;
+  align-items: center;
+}
+
+.mobileMenuClose {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  font-size: 32px;
+  line-height: 1;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-weight: 300;
+}
+
+.mobileMenuItems {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px;
+  gap: 32px;
+  align-items: center;
+}
+
+.mobileMenuItems a {
+  color: #000;
+  text-decoration: none;
+  font-family: "JetBrains Mono", "IBM Plex Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0;
+}
+
+.mobileMenuCta {
+  margin-top: auto;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #000;
+  font-family: "Poppins", "Poppins Placeholder", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  text-align: left;
+}
+
 .heroSection {
   position: relative;
   height: 500vh; /* extra room so hero stays sticky until images are fully gone */
-  outline: 1px dashed rgba(250, 250, 250, 0.2); /* debug: visualize section bounds */
 }
 
 .hero {
@@ -242,9 +350,7 @@
 }
 
 .section {
-  padding: 56px 20px;
-  border-top: 1px solid rgba(39, 39, 42, 0.9);
-  outline: 1px dashed rgba(250, 250, 250, 0.2); /* debug: visualize section bounds */
+  padding: 36px 20px;
 }
 
 .sectionHeader {

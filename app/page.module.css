@@ -1490,6 +1490,15 @@
   .footerWithPadding {
     padding: 0 20px;
   }
+
+  .workDetailTitle {
+    font-size: 28px;
+  }
+
+  .workDetailSection {
+    margin: 80px auto 40px;
+    padding: 0 20px;
+  }
 }
 
 

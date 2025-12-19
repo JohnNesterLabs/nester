@@ -3,7 +3,6 @@
 .main {
   min-height: 100vh;
   color: #f5f5f5;
-  background: #000; /* solid black background */
   font-family: "JetBrains Mono", "IBM Plex Mono", ui-monospace, Menlo, Monaco,
     Consolas, "Liberation Mono", "Courier New", monospace;
   padding: 0 40px 30px;
@@ -117,12 +116,109 @@
   display: block;
   width: 100%;
   height: 2px;
-  background-color: #f9fafb;
+  background-color: #000;
   border-radius: 999px;
+  transition: transform 0.3s ease, margin 0.3s ease;
 }
 
 .menuToggle span + span {
   margin-top: 6px;
+}
+
+.menuToggleOpen span:first-child {
+  transform: rotate(45deg) translate(8px, 8px);
+  margin-top: 0;
+}
+
+.menuToggleOpen span:last-child {
+  transform: rotate(-45deg) translate(8px, -8px);
+  margin-top: 0;
+}
+
+.mobileMenuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 50;
+  backdrop-filter: blur(4px);
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(18px);
+  padding: 80px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  z-index: 51;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.1);
+  animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.mobileMenuClose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  font-size: 32px;
+  line-height: 1;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.mobileMenu a {
+  color: #000;
+  text-decoration: none;
+  font-family: "Poppins", "Poppins Placeholder", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.mobileMenu a:last-of-type {
+  border-bottom: none;
+}
+
+.mobileMenuCta {
+  margin-top: auto;
+  padding: 12px 24px;
+  border: 1px solid #000;
+  background: transparent;
+  color: #000;
+  font-family: "Poppins", "Poppins Placeholder", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  border-radius: 0;
 }
 
 .heroSection {
@@ -242,6 +338,7 @@
 }
 
 .section {
+  background-color: #000;
   padding: 56px 20px;
   border-top: 1px solid rgba(39, 39, 42, 0.9);
   outline: 1px dashed rgba(250, 250, 250, 0.2); /* debug: visualize section bounds */
@@ -548,6 +645,7 @@
 }
 
 .servicesSection {
+  background-color: #000;
   padding: 80px 60px 64px;
   position: relative; /* so sticky children reference this section */
 }
@@ -639,6 +737,7 @@
 }
 
 .whoSection {
+  background-color: #000;
   padding: 80px 60px 56px;
 }
 
@@ -706,6 +805,7 @@
 
 .testimonialSection {
   padding: 80px 0 72px;
+  background-color: #000;
 }
 
 .testimonialTitleRow {
@@ -846,7 +946,7 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr)); /* 3 columns + copyright column */
   gap: 32px;
-  margin-bottom: 28px;
+  padding-bottom: 28px;
 }
 
 .footerLabel {
@@ -1004,7 +1104,7 @@
   }
 
   .main {
-    padding: 56px 0 40px; /* account for fixed header height */
+    padding: 56px 0 0px; /* account for fixed header height */
   }
 
   .heroSection {

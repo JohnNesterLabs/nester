@@ -30,30 +30,32 @@ export default function SiteHeader({ variant = "light", isHeroTextAtTop = false 
       <header
         className={`${styles.header} ${isDark ? styles.headerDark : ""} ${isHeroTextAtTop ? styles.headerHeroTextAtTop : ""} ${isHomePage ? styles.headerHomePage : styles.headerOtherPages}`}
       >
-        <div className={styles.logo}>
-          <Link href="/" onClick={closeMenu}>
-            <img
-              src={logoSrc}
-              alt="Nester"
-              className={styles.logoImage}
-            />
-          </Link>
+        <div className={styles.headerContainer}>
+          <div className={styles.logo}>
+            <Link href="/" onClick={closeMenu}>
+              <img
+                src={logoSrc}
+                alt="Nester"
+                className={styles.logoImage}
+              />
+            </Link>
+          </div>
+          <nav className={styles.nav}>
+            <Link href="/features">Work</Link>
+            <Link href="/about">About Us</Link>
+            <Link href="/blog">Blogs</Link>
+            {/* <Link href="https://nesteraibot.web.app/" target="_blank" rel="noopener noreferrer">NesterAI</Link> */}
+          </nav>
+          <Link href="/contact" className={styles.navCta}>Let&apos;s Talk</Link>
+          <button 
+            className={`${styles.menuToggle} ${isMenuOpen ? styles.menuToggleOpen : ""} ${isHomePage && !isHeroTextAtTop ? styles.menuToggleHome : styles.menuToggleOther}`}
+            onClick={toggleMenu}
+            aria-label="Toggle navigation"
+          >
+            <span />
+            <span />
+          </button>
         </div>
-        <nav className={styles.nav}>
-          <Link href="/features">Work</Link>
-          <Link href="/about">About Us</Link>
-          <Link href="/blog">Blogs</Link>
-          {/* <Link href="https://nesteraibot.web.app/" target="_blank" rel="noopener noreferrer">NesterAI</Link> */}
-        </nav>
-        <Link href="/contact" className={styles.navCta}>Let&apos;s Talk</Link>
-        <button 
-          className={`${styles.menuToggle} ${isMenuOpen ? styles.menuToggleOpen : ""} ${isHomePage && !isHeroTextAtTop ? styles.menuToggleHome : styles.menuToggleOther}`}
-          onClick={toggleMenu}
-          aria-label="Toggle navigation"
-        >
-          <span />
-          <span />
-        </button>
       </header>
       {isMenuOpen && (
         <div className={styles.mobileMenuOverlay} onClick={closeMenu}>
@@ -77,7 +79,7 @@ export default function SiteHeader({ variant = "light", isHeroTextAtTop = false 
               </button>
             </div>
             <div className={styles.mobileMenuItems}>
-              <Link href="/works" onClick={closeMenu}>Work</Link>
+              <Link href="/features" onClick={closeMenu}>Work</Link>
               <Link href="/about" onClick={closeMenu}>About Us</Link>
               <Link href="/blog" onClick={closeMenu}>Blogs</Link>
               {/* <Link href="https://nesteraibot.web.app/" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>Nester AI</Link> */}

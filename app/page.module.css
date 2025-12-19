@@ -15,18 +15,21 @@
 }
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0; /* make header span full viewport width */
   z-index: 40;
+  backdrop-filter: blur(18px);
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
   height: 60px;
   padding: 0 100px;
-  backdrop-filter: blur(18px);
   max-width: 1600px;
   margin: 0 auto;
 }
@@ -1117,6 +1120,8 @@
 
 .footerWithPadding {
   padding: 0 60px;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .footerTop {
@@ -1243,8 +1248,7 @@
     padding: 36px 20px;
   }
 
-  .header {
-    margin: 0;
+  .headerContainer {
     padding: 10px 16px;
   }
 

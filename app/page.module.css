@@ -739,6 +739,22 @@
   text-align: left;
 }
 
+.testimonialSlider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.testimonialTrack {
+  display: flex;
+  width: 100%;
+}
+
+.testimonialSlide {
+  min-width: 100%;
+  width: 100%;
+  flex-shrink: 0;
+}
+
 .testimonialQuote {
   font-size: 18px;
   line-height: 1.8em;

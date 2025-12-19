@@ -68,8 +68,17 @@ export default function Home() {
   // Random background cycling for left / right hero images
   const [leftIndex, setLeftIndex] = useState(0);
   const [rightIndex, setRightIndex] = useState(1);
-  const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const [testimonialIndex, setTestimonialIndex] = useState(1); // Start at 1 for infinite loop
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const [headerVariant, setHeaderVariant] = useState<"light" | "dark">("light");
+  const trackRef = useRef<HTMLDivElement>(null);
+  
+  // Create extended testimonials array for infinite loop: [last, ...all, first]
+  const extendedTestimonials = [
+    testimonials[testimonials.length - 1],
+    ...testimonials,
+    testimonials[0]
+  ];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -89,6 +98,49 @@ export default function Home() {
       setHeaderVariant("light");
     }
   });
+
+  // Handle infinite loop for testimonials
+  useEffect(() => {
+    // Reset position after animation completes when at boundaries
+    if (testimonialIndex === 0 && isTransitioning) {
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+        // Use requestAnimationFrame to ensure instant reset
+        requestAnimationFrame(() => {
+          setTestimonialIndex(extendedTestimonials.length - 2);
+        });
+      }, 600);
+      return () => clearTimeout(timer);
+    }
+    if (testimonialIndex === extendedTestimonials.length - 1 && isTransitioning) {
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+        // Use requestAnimationFrame to ensure instant reset
+        requestAnimationFrame(() => {
+          setTestimonialIndex(1);
+        });
+      }, 600);
+      return () => clearTimeout(timer);
+    }
+    if (isTransitioning && testimonialIndex > 0 && testimonialIndex < extendedTestimonials.length - 1) {
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+      }, 600);
+      return () => clearTimeout(timer);
+    }
+  }, [testimonialIndex, extendedTestimonials.length, isTransitioning]);
+
+  const handleNext = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setTestimonialIndex((prev) => prev + 1);
+  };
+
+  const handlePrev = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setTestimonialIndex((prev) => prev - 1);
+  };
 
   return (
     <main className={styles.main}>
@@ -314,37 +366,47 @@ export default function Home() {
         </div>
 
         <div className={styles.testimonialBody}>
-          <p className={styles.testimonialQuote}>
-            &quot;{testimonials[testimonialIndex].quote}&quot;
-          </p>
-          <p className={styles.testimonialName}>
-            {testimonials[testimonialIndex].name}
-          </p>
-          <p className={styles.testimonialRole}>
-            {testimonials[testimonialIndex].role}
-          </p>
+          <div className={styles.testimonialSlider}>
+            <motion.div
+              ref={trackRef}
+              className={styles.testimonialTrack}
+              animate={{
+                x: `-${testimonialIndex * 100}%`
+              }}
+              transition={{
+                type: "tween",
+                duration: isTransitioning ? 0.6 : 0,
+                ease: [0.25, 0.1, 0.25, 1]
+              }}
+            >
+              {extendedTestimonials.map((testimonial, index) => (
+                <div key={index} className={styles.testimonialSlide}>
+                  <p className={styles.testimonialQuote}>
+                    &quot;{testimonial.quote}&quot;
+                  </p>
+                  <p className={styles.testimonialName}>
+                    {testimonial.name}
+                  </p>
+                  <p className={styles.testimonialRole}>
+                    {testimonial.role}
+                  </p>
+                </div>
+              ))}
+            </motion.div>
+          </div>
 
           <div className={styles.testimonialNav}>
             <button
               type="button"
               aria-label="Previous testimonial"
-              onClick={() =>
-                setTestimonialIndex(
-                  (testimonialIndex - 1 + testimonials.length) %
-                    testimonials.length
-                )
-              }
+              onClick={handlePrev}
             >
               ‹
             </button>
             <button
               type="button"
               aria-label="Next testimonial"
-              onClick={() =>
-                setTestimonialIndex(
-                  (testimonialIndex + 1) % testimonials.length
-                )
-              }
+              onClick={handleNext}
             >
               ›
             </button>

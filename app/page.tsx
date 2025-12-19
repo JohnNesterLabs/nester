@@ -48,6 +48,7 @@ const heroBackgrounds = [
 export default function Home() {
   const heroRef = useRef<HTMLDivElement | null>(null);
   const worksRef = useRef<HTMLElement | null>(null);
+  const serviceStackRef = useRef<HTMLDivElement | null>(null);
   const { scrollYProgress } = useScroll({
     target: heroRef,
     offset: ["start start", "end start"]
@@ -89,6 +90,51 @@ export default function Home() {
       setHeaderVariant("light");
     }
   });
+
+  // Handle service card stacking with fade effect
+  useEffect(() => {
+    const serviceStack = serviceStackRef.current;
+    if (!serviceStack) return;
+
+    const cards = Array.from(serviceStack.children) as HTMLElement[];
+    if (cards.length === 0) return;
+
+    const handleScroll = () => {
+      // Responsive sticky position based on screen size
+      const isMobile = window.innerWidth <= 640;
+      const isTablet = window.innerWidth <= 1024 && window.innerWidth > 640;
+      const stickyTop = isMobile ? 180 : isTablet ? 220 : 300; // matches CSS top values
+
+      cards.forEach((card, index) => {
+        const cardRect = card.getBoundingClientRect();
+        
+        // Check if this card is currently sticky (at the sticky position)
+        const isSticky = cardRect.top <= stickyTop && cardRect.bottom > stickyTop;
+        
+        // Get the next card
+        const nextCard = cards[index + 1];
+
+        // Remove faded class from all cards first
+        card.classList.remove('faded');
+        
+        // If this card is sticky and next card exists, fade the next card
+        if (isSticky && nextCard) {
+          const nextCardRect = nextCard.getBoundingClientRect();
+          // Fade the next card if it's approaching the sticky position
+          if (nextCardRect.top > stickyTop) {
+            nextCard.classList.add('faded');
+          }
+        }
+      });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <main className={styles.main}>
@@ -167,7 +213,7 @@ export default function Home() {
         </div>
         <div className={styles.servicesDivider} />
 
-        <div className={styles.serviceStack}>
+        <div ref={serviceStackRef} className={styles.serviceStack}>
           <div className={styles.serviceCard}>
             <div className={styles.serviceCardColumns}>
               <div className={styles.serviceCardLabel}>Human</div>

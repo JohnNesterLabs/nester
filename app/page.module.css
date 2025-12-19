@@ -509,7 +509,7 @@
   margin-bottom: 40px;
   position: sticky;
   top: 80px;           /* stays visible while cards stack below */
-  z-index: 3;
+  z-index: 10;        /* higher than all cards to stay on top */
   background-color: #000; /* match page background so text sits on solid black */
   padding-bottom: 16px;
 }
@@ -541,22 +541,46 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 0; /* no gap so cards stack directly on top of each other */
+  padding-top: 100px; /* space before first card so content is visible when it becomes sticky */
   padding-bottom: 120px; /* extra scroll space so last card can pin */
 }
 
 .serviceCard {
   position: sticky;
-  top: 160px;
-  padding: 40px 0px 56px; /* a bit taller for more breathing room */
+  top: 300px; /* border will align at this sticky point */
+  padding: 0;
+  padding-bottom: 56px;
   border-radius: 0;
-  border-top: 1px solid rgba(148, 163, 184, 0.7); /* line only at the top */
+  border-top: 1px solid rgba(244, 246, 247, 0.7); /* border at top - aligns with sticky point */
   border-right: none;
   border-bottom: none;
   border-left: none;
   background-color: #000; /* keep solid black so previous content doesn't show through */
   box-shadow: none;
-  z-index: 1;
+  transition: opacity 0.3s ease;
+  opacity: 1;
+}
+
+.serviceCard:nth-child(1) {
+  z-index: 1; /* first card at bottom of stack */
+  margin-top: 0; /* ensure first card has proper spacing */
+}
+
+.serviceCard:nth-child(2) {
+  z-index: 2; /* second card above first */
+}
+
+.serviceCard:nth-child(3) {
+  z-index: 3; /* third card above second */
+}
+
+.serviceCard:nth-child(4) {
+  z-index: 4; /* last card (Cloud) on top of stack */
+}
+
+.serviceCard.faded {
+  opacity: 0.4;
 }
 
 .serviceCardLabel {
@@ -575,6 +599,7 @@
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.16em;
+  padding-top: 48px; /* increased padding so full content including "HUMAN" label is fully visible below border */
 }
 
 .serviceCardColumns ul {
@@ -894,6 +919,20 @@
     flex-direction: column;
     align-items: flex-start;
   }
+
+  .servicesSection {
+    padding: 60px 40px 64px;
+  }
+
+  .serviceCard {
+    top: 220px; /* adjust for tablet */
+  }
+
+  .serviceCardColumns {
+    grid-template-columns: minmax(0, 0.6fr) minmax(0, 1fr) minmax(0, 1fr);
+    gap: 24px;
+    font-size: 11px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -998,6 +1037,42 @@
 
   .worksGrid {
     grid-template-columns: 1fr;
+  }
+
+  .servicesSection {
+    padding: 40px 20px 64px;
+  }
+
+  .servicesTitleRow {
+    top: 56px; /* adjust for mobile header */
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+  }
+
+  .serviceStack {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+
+  .serviceCard {
+    top: 180px; /* adjust sticky position for mobile */
+    padding-bottom: 40px;
+  }
+
+  .serviceCardLabel {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .serviceCardColumns {
+    grid-template-columns: 1fr; /* single column on mobile */
+    gap: 24px;
+    padding-top: 32px;
+    font-size: 11px;
+  }
+
+  .serviceCardColumns ul {
+    gap: 8px;
   }
 
   .whoDescription {

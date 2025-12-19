@@ -1,31 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import styles from "../page.module.css";
 import contactStyles from "./contact.module.css";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: ""
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted:", formData);
-  };
-
   return (
     <main className={styles.main}>
       <SiteHeader variant="dark" />
@@ -58,53 +38,18 @@ export default function ContactPage() {
           </div>
 
           <div className={contactStyles.contactForm}>
-            <form onSubmit={handleSubmit}>
-              <div className={contactStyles.formGroup}>
-                <label htmlFor="name" className={contactStyles.formLabel}>Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  placeholder="Jane Smith"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className={contactStyles.formInput}
-                  required
-                />
-              </div>
-
-              <div className={contactStyles.formGroup}>
-                <label htmlFor="email" className={contactStyles.formLabel}>Email</label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="jane@framer.com"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className={contactStyles.formInput}
-                  required
-                />
-              </div>
-
-              <div className={contactStyles.formGroup}>
-                <label htmlFor="message" className={contactStyles.formLabel}>Message</label>
-                <textarea
-                  name="message"
-                  id="message"
-                  placeholder="Send a message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  className={contactStyles.formTextarea}
-                  rows={6}
-                  required
-                />
-              </div>
-
-              <button type="submit" className={contactStyles.submitButton}>
-                Submit
-              </button>
-            </form>
+            <div className={contactStyles.tallyEmbedWrapper}>
+              <iframe
+                src="https://tally.so/embed/VLjZkM?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&hideBranding=1"
+                width="100%"
+                height="600"
+                frameBorder="0"
+                marginHeight={0}
+                marginWidth={0}
+                title="Contact Form"
+                className={contactStyles.tallyEmbed}
+              />
+            </div>
           </div>
         </div>
       </section>

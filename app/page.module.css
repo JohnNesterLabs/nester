@@ -1294,6 +1294,15 @@
     display: block;
   }
 
+  /* Hamburger button color based on route - mobile only */
+  .menuToggleHome span {
+    background-color: #000; /* Black for home page (white header background) */
+  }
+
+  .menuToggleOther span {
+    background-color: #ffffff; /* White for other pages (transparent header, dark background) */
+  }
+
   .main {
     padding: 56px 0 40px; /* account for fixed header height */
   }

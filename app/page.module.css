@@ -654,16 +654,36 @@
   gap: 20px;
   overflow-x: auto;
   padding-bottom: 6px;
+  padding-right: 0;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.3) transparent;
+  -webkit-overflow-scrolling: touch;
+}
+
+.moreWorkCarousel::-webkit-scrollbar {
+  height: 6px;
+}
+
+.moreWorkCarousel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.moreWorkCarousel::-webkit-scrollbar-thumb {
+  background-color: rgba(148, 163, 184, 0.3);
+  border-radius: 3px;
 }
 
 .moreWorkCard {
-  min-width: 260px;
+  width: 300px;
+  min-width: 300px;
   max-width: 300px;
   border-radius: 4px;
   overflow: hidden;
   text-decoration: none;
   color: inherit;
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .moreWorkMedia {
@@ -671,6 +691,30 @@
   background-size: cover;
   background-position: center;
   border-radius: 4px;
+  width: 100%;
+}
+
+.moreWorkMeta {
+  padding: 14px 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.moreWorkMeta .workTag {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.moreWorkTitle {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin: 0;
+  color: #e4e4e7;
+  text-transform: uppercase;
+  line-height: 1.3;
 }
 
 .secondaryButton {

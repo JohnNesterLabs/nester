@@ -1523,6 +1523,18 @@
     margin: 80px auto 40px;
     padding: 0 20px;
   }
+
+  .workDetailQuote {
+    font-size: 22px;
+    line-height: 1.3em;
+    margin: 32px 0 16px;
+  }
+
+  .workDetailParagraph {
+    font-size: 14px;
+    line-height: 1.6em;
+    margin: 16px 0;
+  }
 }
 
 

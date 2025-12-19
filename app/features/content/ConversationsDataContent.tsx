@@ -16,10 +16,10 @@ export default function ConversationsDataContent() {
         <h3 className={styles.workDetailSubheading}>Core Technical Highlights: An Enterprise-Grade Agentic Architecture</h3>
         <p className={styles.workDetailParagraph}> The system's complexity lies in the orchestration of advanced AI models with rigorous data management protocols. This approach ensures not only accurate interpretation but also reliable, secure execution in a production environment. </p>
         
-        <ul>
+        <ul className={styles.workDetailList}>
           <li>
             <strong>Hybrid Intelligence Layer (Gemini &amp; Rule-Based Fallback):</strong>
-            <ul>
+            <ul className={styles.workDetailList}>
               <li>
                 Goes beyond simple LLM inference by implementing a dual-mechanism approach. It
                 leverages the semantic reasoning of Google Gemini for nuanced intent detection
@@ -31,7 +31,7 @@ export default function ConversationsDataContent() {
           </li>
           <li>
             <strong>Orchestrated Multi-Agent System (CrewAI):</strong>
-            <ul>
+            <ul className={styles.workDetailList}>
               <li>
                 The core of the system is the <strong>Master Orchestrator</strong>, which manages
                 session context and delegates tasks across a specialized &apos;crew&apos; of AI
@@ -44,7 +44,7 @@ export default function ConversationsDataContent() {
           </li>
           <li>
             <strong>Dynamic Schema‑Aware Security &amp; Validation:</strong>
-            <ul>
+            <ul className={styles.workDetailList}>
               <li>
                 Implements an essential <strong>separation of concerns</strong> between natural
                 language understanding and data execution. The system dynamically loads and
@@ -60,7 +60,7 @@ export default function ConversationsDataContent() {
           </li>
           <li>
             <strong>Advanced Tooling for Data Integrity:</strong>
-            <ul>
+            <ul className={styles.workDetailList}>
               <li>
                 Includes specialized tools like the <strong>MultiQueryParserTool</strong>, which
                 intelligently decomposes a single, ambiguous user sentence into multiple discrete,
@@ -71,7 +71,7 @@ export default function ConversationsDataContent() {
           </li>
           <li>
             <strong>Flexible Deployment &amp; Integration:</strong>
-            <ul>
+            <ul className={styles.workDetailList}>
               <li>
                 Designed for <strong>headless operation</strong> (CLI) and seamless integration via
                 a <strong>modern web/mobile client</strong>, demonstrating readiness for various

@@ -15,7 +15,7 @@ export default function BrowserSecurityPortalContent() {
           Despite strong technical differentiation, the UX audit revealed several barriers that
           slowed adoption and reduced day-to-day efficiency:
         </p>
-        <ul>
+        <ul className={styles.workDetailList}>
           <li>
             <strong>Fragmented task flows:</strong> Critical workflows such as deployment,
             threat monitoring and policy management were spread across disconnected sections,
@@ -64,7 +64,7 @@ export default function BrowserSecurityPortalContent() {
            progress and trust.
          </p>
          <p className={styles.workDetailParagraph}>Key points we kept in mind while approaching the redesign:</p>
-         <ul>
+         <ul className={styles.workDetailList}>
            <li>Incorporating legacy brand elements</li>
            <li>Clarity first design approach</li>
            <li>A refresh that meant to suggest calm modernism</li>
@@ -78,7 +78,7 @@ export default function BrowserSecurityPortalContent() {
         </p>
         <img src="/browserSecurity/s3.avif" alt="browser visuals frame 3" />
         <h3 className={styles.workDetailSubheading}>Key interventions</h3>
-        <ul>
+        <ul className={styles.workDetailList}>
           <li>
             <strong>Task-based Information Architecture:</strong> Replacing object-only navigation
             with task-oriented categories (e.g., Monitor, Policies, Data &amp; Lists, Users,

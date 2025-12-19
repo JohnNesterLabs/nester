@@ -68,6 +68,10 @@
   font-family: "Poppins", "Poppins Placeholder", sans-serif;
 }
 
+.ul > .li {
+  font-family: "Poppins", "Poppins Placeholder", sans-serif;
+}
+
 .nav a {
   color: black;
   text-decoration: none;
@@ -578,7 +582,7 @@
 
 .workDetailQuote {
   font-family: "JetBrains Mono", "JetBrains Mono Placeholder", sans-serif;
-  font-size: 28px;
+  font-size: 40px;
   line-height: 1.2em;
   letter-spacing: -0.02em;
   font-weight: 400;
@@ -589,21 +593,42 @@
 
 .workDetailSubheading {
   font-family: "JetBrains Mono", "JetBrains Mono Placeholder", sans-serif;
-  font-size: 22px;
+  font-size: 24px;
   line-height: 1.4;
   font-weight: 400;
   color: #e4e4e7;
   margin: 40px 0 20px;
   text-transform: uppercase;
+  margin-bottom: 0px;
+  margin-top: 40px;
 }
 
 .workDetailParagraph {
   font-family: "Poppins", "Poppins Placeholder", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.8em;
   color: #e4e4e7;
   margin-bottom: 20px;
   letter-spacing: 0em;
+  margin-bottom: 0px;
+  margin-top: 20px;
+}
+
+.workDetailList {
+  font-family: "Poppins", "Poppins Placeholder", sans-serif;
+  font-size: 16px;
+  line-height: 1.8em;
+  color: #e4e4e7;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.workDetailList li {
+  margin-bottom: 12px;
+}
+
+.workDetailList li strong {
+  font-weight: 600;
 }
 
 .moreWorkSection {

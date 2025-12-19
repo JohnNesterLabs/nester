@@ -3,7 +3,7 @@ import styles from "../../page.module.css";
 export default function IdentityManagementPlatformContent() {
     return (
       <>
-        <h2 className={styles.workDetailQuote}>"Astha.ai - AI Agent Identity & Security Management </h2>
+        <h2 className={styles.workDetailQuote}>Astha.ai - AI Agent Identity & Security Management </h2>
         <h3 className={styles.workDetailSubheading}>Making it simpler for enterprises to manage their AI agent workforce </h3>
         <h3 className={styles.workDetailSubheading}>Overview  </h3>
         <p className={styles.workDetailParagraph}>

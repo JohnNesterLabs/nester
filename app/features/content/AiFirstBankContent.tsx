@@ -3,7 +3,7 @@ import styles from "../../page.module.css";
 export default function AiFirstBankContent() {
     return (
       <>
-        <h2 className={styles.workDetailQuote}>"Designing an AI First Digital Bank That Thinks Ahead"</h2>
+        <h2 className={styles.workDetailQuote}>Designing an AI First Digital Bank That Thinks Ahead</h2>
         <p className={styles.workDetailParagraph}>Most digital banks still behave like static dashboards. They show balances, transactions, and charts, but leave the actual thinking and decision making to the user. From the start, we set out to design something fundamentally different. </p>
         
         <p className={styles.workDetailParagraph}>We designed an AI first digital bank that acts less like a tool and more like a financial thinking partner. Our goal was to create a system that proactively works on behalf of the user, helping them earn more from their existing cash while removing the constant mental overhead of managing accounts, bills and balances.</p>

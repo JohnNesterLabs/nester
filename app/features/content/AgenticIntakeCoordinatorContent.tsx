@@ -3,7 +3,7 @@ import styles from "../../page.module.css";
 export default function AgenticIntakeCoordinatorContent() {
     return (
       <>
-        <h2 className={styles.workDetailQuote}>"Conversational Data Assistant"</h2>
+        <h2 className={styles.workDetailQuote}>Conversational Data Assistant</h2>
         <p className={styles.workDetailParagraph}>
           This project involved designing and deploying a sophisticated, voice-based intake
           coordinator system for a major digital health platform. The system acts as a
@@ -24,7 +24,7 @@ export default function AgenticIntakeCoordinatorContent() {
           The architecture is centered around maintaining sub‑second latency and absolute
           reliability, critical standards for a healthcare application.
         </p>
-        <ul>
+        <ul className={styles.workDetailList}>
           <li>
             <strong>Real-time Voice Foundation:</strong> Direct integration with the{" "}
             <strong>OpenAI Realtime API</strong> provides low-latency Speech‑to‑Text and
@@ -48,7 +48,7 @@ export default function AgenticIntakeCoordinatorContent() {
         <img src="/banky/b4.png" alt="Agentic Intake Coordinator visuals frame 1" />
   
         <h3 className={styles.workDetailSubheading}>Enterprise-Grade Technical Highlights</h3>
-        <ul>
+        <ul className={styles.workDetailList}>
           <li>
             <strong>Professional Guardrails Framework:</strong> Implements strict,
             healthcare‑specific conversation boundaries enforced by the Conversation Manager.
@@ -63,7 +63,7 @@ export default function AgenticIntakeCoordinatorContent() {
           </li>
           <li>
             <strong>HIPAA‑Compliant Memory Architecture:</strong>
-            <ul>
+            <ul className={styles.workDetailList}>
               <li>
                 <strong>Redis Cluster</strong> provides sub‑50ms access for active session
                 state.

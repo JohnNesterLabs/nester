@@ -3,7 +3,7 @@ import styles from "../../page.module.css";
 export default function KahunaLabsContent() {
     return (
       <>
-      <h2 className={styles.workDetailQuote}>"We have solved for long standing problems in the support industry, can you make 4 animations that can show this nature of complexity while keeping it hollywood level cool?"</h2>
+      <h2 className={styles.workDetailQuote}>We have solved for long standing problems in the support industry, can you make 4 animations that can show this nature of complexity while keeping it hollywood level cool?</h2>
         <p className={styles.workDetailParagraph}>
         Sanjeev & John came to us trying to figure out how to visualise the complex world of enterprise support in motion. What started as an animation project ended up being a full blown brand building partnership and the beginning of a beautiful relationship. We always love clients who are unafraid to shake things up a bit.
         </p>

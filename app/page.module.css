@@ -701,7 +701,7 @@
 
 .whoPhoto {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 2.9 / 3;
   background-color: #f5f5f5;
   background-size: cover;
   background-position: center;
@@ -1156,6 +1156,7 @@
 
   .whoGrid {
     grid-template-columns: 1fr; /* one team member card per row on mobile */
+    padding: 0 20px;
   }
 
   .servicesSection {
@@ -1200,6 +1201,11 @@
 
   .whoCard {
     gap: 0px;
+  }
+
+  .whoPhoto {
+    aspect-ratio: 2.8 / 3;
+    border-radius: 4px;
   }
 
   .whoName {

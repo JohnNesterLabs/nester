@@ -123,11 +123,21 @@ export default function Home() {
               className={styles.heroTitleBlock}
               style={{ y: textY, opacity: textOpacity }}
             >
-              <p className={styles.heroTitleLine}>
-                REIMAGINING INTELLIGENCE
-              </p>
-              <p className={styles.heroTitleLine}>THROUGH RESEARCH, DESIGN &amp;</p>
-              <p className={styles.heroTitleLine}>TECHNOLOGY</p>
+              <div className={styles.heroTitleDesktop}>
+                <p className={styles.heroTitleLine}>
+                  REIMAGINING INTELLIGENCE
+                </p>
+                <p className={styles.heroTitleLine}>THROUGH RESEARCH, DESIGN &amp;</p>
+                <p className={styles.heroTitleLine}>TECHNOLOGY</p>
+              </div>
+
+              <div className={styles.heroTitleMobile}>
+                <p className={styles.heroTitleLine}>
+                  REIMAGINING 
+                </p>
+                <p className={styles.heroTitleLine}>INTELLIGENCE THROUGH </p>
+                <p className={styles.heroTitleLine}>RESEARCH, DESIGN &amp; TECHNOLOGY</p>
+              </div>
 
               <div className={styles.heroCornerRow}>
                 <div

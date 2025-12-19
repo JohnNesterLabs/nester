@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import styles from "../page.module.css";
 
@@ -11,6 +12,8 @@ type SiteHeaderProps = {
 
 export default function SiteHeader({ variant = "light", isHeroTextAtTop = false }: SiteHeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
   const isDark = variant === "dark";
   const logoSrc = isDark ? "/images/Logo White.svg" : "/images/Logo_web 1.svg";
 
@@ -25,7 +28,7 @@ export default function SiteHeader({ variant = "light", isHeroTextAtTop = false 
   return (
     <>
       <header
-        className={`${styles.header} ${isDark ? styles.headerDark : ""} ${isHeroTextAtTop ? styles.headerHeroTextAtTop : ""}`}
+        className={`${styles.header} ${isDark ? styles.headerDark : ""} ${isHeroTextAtTop ? styles.headerHeroTextAtTop : ""} ${isHomePage ? styles.headerHomePage : styles.headerOtherPages}`}
       >
         <div className={styles.logo}>
           <Link href="/" onClick={closeMenu}>

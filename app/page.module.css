@@ -1219,7 +1219,6 @@
   .header {
     margin: 0;
     padding: 10px 16px;
-    background-color: white;
   }
 
   .headerDark {
@@ -1227,6 +1226,21 @@
   }
 
   .headerHeroTextAtTop {
+    background-color: transparent !important;
+  }
+
+  /* Route-based background for mobile only */
+  /* Home page: white background by default, transparent when hero text is at top */
+  .headerHomePage {
+    background-color: white !important;
+  }
+
+  .headerHomePage.headerHeroTextAtTop {
+    background-color: transparent !important;
+  }
+
+  /* Other pages: transparent background */
+  .headerOtherPages {
     background-color: transparent !important;
   }
 

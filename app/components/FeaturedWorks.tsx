@@ -75,9 +75,11 @@ export default function FeaturedWorksSection({ sectionRef }: FeaturedWorksSectio
           </Link>
         ))}
       </div>
-      <Link href="/features" className={styles.secondaryButton}>
-        More Works
-      </Link>
+      <div style={{ textAlign: "center" }}>
+        <Link href="/features" className={styles.secondaryButton}>
+          More Works
+        </Link>
+      </div>
     </motion.section>
   );
 }

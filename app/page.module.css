@@ -733,17 +733,33 @@
 
 .secondaryButton {
   border-radius: 999px;
-  padding: 8px 20px;
+  padding: 8px 0; /* only vertical padding, no horizontal */
   background: transparent;
   color: #e5e7eb;
   text-decoration: none;
   font-size: 16px;
   font-family: "Poppins", "Poppins Placeholder", sans-serif;
   cursor: pointer;
-  display: block;
+  display: inline-block; /* only take up text width */
   margin: 0 auto; /* center button within section */
   text-align: center;
-  cursor: pointer;
+  position: relative;
+  padding-bottom: 4px; /* match header link padding-bottom */
+}
+
+.secondaryButton::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: #e5e7eb;
+  transition: width 0.2s ease;
+}
+
+.secondaryButton:hover::after {
+  width: 100%;
 }
 
 .servicesSection {

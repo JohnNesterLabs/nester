@@ -1253,7 +1253,7 @@
   }
 
   .headerDark {
-    background-color: white;
+    /* background-color: white; */
   }
 
   .headerHeroTextAtTop {
@@ -1263,7 +1263,7 @@
   /* Route-based background for mobile only */
   /* Home page: white background by default, transparent when hero text is at top */
   .headerHomePage {
-    background-color: white !important;
+    /* background-color: white !important; */
   }
 
   .headerHomePage.headerHeroTextAtTop {

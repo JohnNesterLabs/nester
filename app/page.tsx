@@ -97,6 +97,7 @@ export default function Home() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [headerVariant, setHeaderVariant] = useState<"light" | "dark">("light");
   const [isHeroTextAtTop, setIsHeroTextAtTop] = useState(false);
+  const [areHeroImagesVisible, setAreHeroImagesVisible] = useState(true);
   const trackRef = useRef<HTMLDivElement>(null);
 
   
@@ -153,6 +154,14 @@ export default function Home() {
   useMotionValueEvent(heroOverlayYProgress, "change", (latest) => {
     if (typeof window !== "undefined" && window.innerWidth <= 640) {
       setIsHeroTextAtTop(latest >= 1);
+    }
+  });
+
+   // Track hero images visibility for dynamic backdrop filter on mobile
+   useMotionValueEvent(heroOpacity, "change", (latest) => {
+    if (typeof window !== "undefined" && window.innerWidth <= 640) {
+      // Images are visible when opacity > 0.1 (accounting for fade transitions)
+      setAreHeroImagesVisible(latest > 0.1);
     }
   });
 
@@ -247,7 +256,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       {/* Navbar */}
-      <SiteHeader variant={headerVariant} isHeroTextAtTop={isHeroTextAtTop} />
+      <SiteHeader variant={headerVariant} isHeroTextAtTop={isHeroTextAtTop} areHeroImagesVisible={areHeroImagesVisible} />
 
       {/* Hero – scroll-controlled split images pinned while next section comes up */}
       <section ref={heroRef} className={styles.heroSection}>

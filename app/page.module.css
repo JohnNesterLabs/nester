@@ -1253,7 +1253,7 @@
   }
 
   .headerDark {
-    background-color: white;
+    /* background-color: white; */
   }
 
   .headerHeroTextAtTop {
@@ -1263,7 +1263,7 @@
   /* Route-based background for mobile only */
   /* Home page: white background by default, transparent when hero text is at top */
   .headerHomePage {
-    background-color: white !important;
+    /* background-color: white !important; */
   }
 
   .headerHomePage.headerHeroTextAtTop {
@@ -1336,16 +1336,17 @@
   }
 
   .main {
-    padding: 56px 0 40px; /* account for fixed header height */
+    padding: 0 0 40px; /* no top padding so hero starts at top, header overlays it */
   }
 
   .heroSection {
     height: 400vh; /* keep tall scroll area so sticky hero + animations work */
+    margin-top: 0; /* ensure hero section starts at top */
   }
 
   .hero {
     position: sticky;       /* make hero sticky on mobile as well */
-    top: 56px;              /* stick just below fixed mobile header */
+    top: 0;                 /* start at top, header overlays it */
     margin-inline: 0;
     margin-top: 0;
     margin-bottom: 32px;

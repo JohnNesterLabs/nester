@@ -48,7 +48,7 @@ export default function SiteHeader({ variant = "light", isHeroTextAtTop = false 
           </nav>
           <Link href="/contact" className={styles.navCta}>Let&apos;s Talk</Link>
           <button 
-            className={`${styles.menuToggle} ${isMenuOpen ? styles.menuToggleOpen : ""} ${isHomePage && !isHeroTextAtTop ? styles.menuToggleHome : styles.menuToggleOther}`}
+            className={`${styles.menuToggle} ${isMenuOpen ? styles.menuToggleOpen : ""} ${isDark ? styles.menuToggleOther : styles.menuToggleHome}`}
             onClick={toggleMenu}
             aria-label="Toggle navigation"
           >

@@ -249,7 +249,7 @@
 
 .heroSection {
   position: relative;
-  height: 400vh; /* extra room so hero stays sticky until images are fully gone */
+  height: 350vh; /* extra room so hero stays sticky until images are fully gone */
 }
 
 .hero {
@@ -1346,7 +1346,7 @@
   }
 
   .heroSection {
-    height: 300vh; /* keep tall scroll area so sticky hero + animations work */
+    height: 250vh; /* keep tall scroll area so sticky hero + animations work */
     margin-top: 0; /* ensure hero section starts at top */
   }
 

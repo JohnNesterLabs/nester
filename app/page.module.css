@@ -1252,9 +1252,7 @@
     padding: 10px 16px;
   }
 
-  .headerDark {
-    /* background-color: white; */
-  }
+  /* .headerDark background handled by headerHomePage/headerOtherPages */
 
   .headerHeroTextAtTop {
     background-color: transparent !important;
@@ -1273,6 +1271,12 @@
   /* Other pages: transparent background */
   .headerOtherPages {
     background-color: transparent !important;
+  }
+
+  /* Remove backdrop filter when hero images are visible (mobile + home page only) */
+  .headerNoBackdrop {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
   }
 
   .sectionHeaderCentered h2 {

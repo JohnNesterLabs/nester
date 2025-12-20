@@ -1275,6 +1275,12 @@
     background-color: transparent !important;
   }
 
+  /* Remove backdrop filter when hero images are visible (mobile + home page only) */
+  .headerNoBackdrop {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
   .sectionHeaderCentered h2 {
     text-align: left;
     font-size: 28px; /* mobile size for Featured Works heading */

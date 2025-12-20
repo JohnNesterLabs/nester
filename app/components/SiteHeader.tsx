@@ -8,14 +8,18 @@ import styles from "../page.module.css";
 type SiteHeaderProps = {
   variant?: "light" | "dark";
   isHeroTextAtTop?: boolean;
+  areHeroImagesVisible?: boolean;
 };
 
-export default function SiteHeader({ variant = "light", isHeroTextAtTop = false }: SiteHeaderProps) {
+export default function SiteHeader({ variant = "light", isHeroTextAtTop = false, areHeroImagesVisible = true }: SiteHeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
   const isHomePage = pathname === "/";
   const isDark = variant === "dark";
   const logoSrc = isDark ? "/images/Logo White.svg" : "/images/Logo_web 1.svg";
+
+  // Remove backdrop filter when hero images are visible (mobile + home page only)
+  const shouldRemoveBackdrop = isHomePage && areHeroImagesVisible;
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -28,7 +32,7 @@ export default function SiteHeader({ variant = "light", isHeroTextAtTop = false 
   return (
     <>
       <header
-        className={`${styles.header} ${isDark ? styles.headerDark : ""} ${isHeroTextAtTop ? styles.headerHeroTextAtTop : ""} ${isHomePage ? styles.headerHomePage : styles.headerOtherPages}`}
+        className={`${styles.header} ${isDark ? styles.headerDark : ""} ${isHeroTextAtTop ? styles.headerHeroTextAtTop : ""} ${isHomePage ? styles.headerHomePage : styles.headerOtherPages} ${shouldRemoveBackdrop ? styles.headerNoBackdrop : ""}`}
       >
         <div className={styles.headerContainer}>
           <div className={styles.logo}>

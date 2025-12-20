@@ -1370,8 +1370,8 @@
 
   .heroImage {
     width: 100%;
-    flex: 1 1 50%;          /* each image takes half of hero height */
-    height: auto;
+    height: 50%;             /* each image takes exactly half of hero height */
+    flex-shrink: 0;         /* prevent images from shrinking */
   }
 
   .heroOverlay {

@@ -4,7 +4,7 @@ import { projects } from "../data/projects";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 
-export default function FeaturesPage() {
+export default function WorkPage() {
   return (
     <main className={styles.main}>
       <SiteHeader variant="dark" />
@@ -23,7 +23,7 @@ export default function FeaturesPage() {
           {projects.map((project) => (
             <Link
               key={project.slug}
-              href={`/features/${project.slug}`}
+              href={`/work/${project.slug}`}
               className={styles.workCardLink}
             >
               <article className={styles.workCard}>

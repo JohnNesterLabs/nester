@@ -53,7 +53,7 @@ export default function FeaturedWorksSection({ sectionRef }: FeaturedWorksSectio
         {projects.slice(0, 4).map((project) => (
           <Link
             key={project.slug}
-            href={`/features/${project.slug}`}
+            href={`/work/${project.slug}`}
             className={styles.workCardLink}
           >
             <motion.article
@@ -76,7 +76,7 @@ export default function FeaturedWorksSection({ sectionRef }: FeaturedWorksSectio
         ))}
       </div>
       <div style={{ textAlign: "center" }}>
-        <Link href="/features" className={styles.secondaryButton}>
+        <Link href="/work" className={styles.secondaryButton}>
           More Works
         </Link>
       </div>

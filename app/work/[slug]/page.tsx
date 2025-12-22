@@ -79,7 +79,7 @@ export default function FeatureDetailPage({ params }: FeatureDetailPageProps) {
             {moreProjects.map((item) => (
               <Link
                 key={item.slug}
-                href={`/features/${item.slug}`}
+                href={`/work/${item.slug}`}
                 className={styles.moreWorkCard}
               >
                 <div
